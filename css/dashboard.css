@@ -1,0 +1,4057 @@
+/* =====================================================
+   SVOS - DASHBOARD COMMON CSS
+===================================================== */
+
+.dashboard-layout {
+    min-height: 100vh;
+    display: flex;
+    background: #f5f7f6;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background: #14532d;
+    color: #ffffff;
+    padding: 22px 16px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px 25px;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.sidebar-logo span {
+    font-size: 28px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    color: #dcfce7;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background: #166534;
+    color: #ffffff;
+}
+
+.logout-btn {
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    background: #166534;
+    color: #ffffff;
+}
+
+/* ================= MAIN ================= */
+
+.dashboard-main {
+    width: calc(100% - 250px);
+    margin-left: 250px;
+}
+
+/* ================= TOPBAR ================= */
+
+.topbar {
+    min-height: 72px;
+    padding: 0 30px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topbar h1 {
+    font-size: 22px;
+    color: #111827;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #dcfce7;
+    color: #166534;
+    font-weight: 800;
+}
+
+.user-info strong {
+    display: block;
+    font-size: 14px;
+}
+
+.user-info small {
+    color: #6b7280;
+}
+
+/* ================= CONTENT ================= */
+
+.dashboard-content {
+    padding: 30px;
+}
+
+.welcome-box {
+    margin-bottom: 25px;
+}
+
+.welcome-box h2 {
+    color: #111827;
+    margin-bottom: 5px;
+}
+
+.welcome-box p {
+    color: #6b7280;
+}
+
+/* ================= STAT CARDS ================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.stat-icon {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.stat-card h3 {
+    font-size: 26px;
+    color: #111827;
+}
+
+.stat-card p {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+/* ================= QUICK ACTIONS ================= */
+
+.dashboard-section {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.dashboard-section h3 {
+    margin-bottom: 20px;
+    color: #111827;
+}
+
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.quick-action {
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.quick-action:hover {
+    border-color: #bbf7d0;
+    background: #f0fdf4;
+}
+
+.quick-action-icon {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.quick-action h4 {
+    color: #166534;
+    margin-bottom: 5px;
+}
+
+.quick-action p {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .sidebar {
+        width: 210px;
+    }
+
+    .dashboard-main {
+        width: calc(100% - 210px);
+        margin-left: 210px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        position: static;
+        width: 100%;
+        min-height: auto;
+    }
+
+    .dashboard-layout {
+        display: block;
+    }
+
+    .dashboard-main {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .topbar {
+        padding: 15px 20px;
+    }
+
+    .dashboard-content {
+        padding: 20px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================================================
+   SVOS CITIZEN - COMPLAINT PAGE
+   ========================================================= */
+
+.complaint-form {
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+    padding: 25px;
+    margin-top: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+
+/* ================= FORM GROUP ================= */
+
+.complaint-form .form-group {
+    margin-bottom: 20px;
+}
+
+.complaint-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #34423a;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* ================= INPUTS ================= */
+
+.complaint-form input,
+.complaint-form select,
+.complaint-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 13px;
+    border: 1px solid #d8e2db;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #34423a;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.complaint-form input::placeholder,
+.complaint-form textarea::placeholder {
+    color: #9aa59e;
+}
+
+.complaint-form input:focus,
+.complaint-form select:focus,
+.complaint-form textarea:focus {
+    border-color: #1b5e20;
+    box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.08);
+}
+
+.complaint-form textarea {
+    resize: vertical;
+    min-height: 140px;
+    line-height: 1.5;
+}
+
+
+/* ================= FORM MESSAGE ================= */
+
+.form-message {
+    display: none;
+    margin-bottom: 18px;
+    padding: 11px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.form-message:not(:empty) {
+    display: block;
+}
+
+.form-message.success {
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    color: #2e7d32;
+}
+
+.form-message.error {
+    background: #ffebee;
+    border: 1px solid #ffcdd2;
+    color: #c62828;
+}
+
+
+/* ================= FORM ACTIONS ================= */
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.primary-btn,
+.secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 145px;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.primary-btn {
+    background: #1b5e20;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background: #154b19;
+}
+
+.primary-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.secondary-btn {
+    background: #f1f4f2;
+    color: #45534a;
+    border: 1px solid #dce4df;
+}
+
+.secondary-btn:hover {
+    background: #e7ece8;
+}
+
+
+/* ================= COMPLAINT INFO ================= */
+
+.dashboard-section .quick-actions {
+    margin-top: 20px;
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 800px) {
+
+    .complaint-form {
+        padding: 20px;
+    }
+
+    .form-actions {
+        justify-content: stretch;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        flex: 1;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .complaint-form {
+        padding: 17px;
+        border-radius: 12px;
+    }
+
+    .complaint-form .form-group {
+        margin-bottom: 17px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+        min-width: 0;
+    }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 400px) {
+
+    .complaint-form {
+        padding: 14px;
+    }
+
+    .complaint-form input,
+    .complaint-form select,
+    .complaint-form textarea {
+        font-size: 12px;
+        padding: 10px 11px;
+    }
+
+}
+/* =========================================================
+   SVOS CITIZEN - EMERGENCY CONTACTS
+   ========================================================= */
+
+.emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.emergency-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+}
+
+.emergency-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.08);
+}
+
+.emergency-icon {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 12px;
+    background: #ffebee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.emergency-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.emergency-info h4 {
+    margin: 0 0 7px;
+    color: #26332a;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.emergency-info p {
+    margin: 0 0 15px;
+    color: #718078;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.emergency-call-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 14px;
+    border-radius: 8px;
+    background: #1b5e20;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.emergency-call-btn:hover {
+    background: #154b19;
+}
+
+.emergency-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff8e1;
+    border: 1px solid #ffecb3;
+    border-radius: 14px;
+}
+
+.emergency-notice-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    border-radius: 10px;
+    background: #fff3cd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.emergency-notice h3 {
+    margin: 0 0 7px;
+    color: #5d4037;
+    font-size: 16px;
+}
+
+.emergency-notice p {
+    margin: 0;
+    color: #795548;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .emergency-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .emergency-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .emergency-card {
+        padding: 17px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .emergency-card {
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .emergency-icon {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        font-size: 22px;
+    }
+
+    .emergency-info h4 {
+        font-size: 15px;
+    }
+
+    .emergency-info p {
+        font-size: 11px;
+    }
+
+    .emergency-call-btn {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .emergency-notice {
+        padding: 16px;
+        gap: 11px;
+    }
+
+    .emergency-notice h3 {
+        font-size: 14px;
+    }
+
+    .emergency-notice p {
+        font-size: 12px;
+    }
+
+}
+/* =========================================================
+   SVOS CITIZEN - PROFILE
+   ========================================================= */
+
+.profile-card {
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+    padding: 25px;
+    margin-top: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.profile-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.profile-card .form-group {
+    margin-bottom: 20px;
+}
+
+.profile-card label {
+    display: block;
+    margin-bottom: 8px;
+    color: #34423a;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.profile-card input,
+.profile-card textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 13px;
+    border: 1px solid #d8e2db;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #34423a;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.profile-card input::placeholder,
+.profile-card textarea::placeholder {
+    color: #9aa59e;
+}
+
+.profile-card input:focus,
+.profile-card textarea:focus {
+    border-color: #1b5e20;
+    box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.08);
+}
+
+.profile-card input[readonly] {
+    background: #f5f7f5;
+    color: #718078;
+    cursor: not-allowed;
+}
+
+.profile-card textarea {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.5;
+}
+
+.profile-card > .form-message {
+    display: none;
+    margin-bottom: 20px;
+    padding: 11px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.profile-card > .form-message.success {
+    display: block;
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    color: #2e7d32;
+}
+
+.profile-card > .form-message.error {
+    display: block;
+    background: #ffebee;
+    border: 1px solid #ffcdd2;
+    color: #c62828;
+}
+
+.profile-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.profile-actions .primary-btn,
+.profile-actions .secondary-btn {
+    min-width: 140px;
+}
+
+.profile-actions .primary-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ACCOUNT INFORMATION
+   ========================================================= */
+
+.account-info-card {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.account-info-item {
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 12px;
+    padding: 17px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.account-info-item span {
+    color: #718078;
+    font-size: 12px;
+}
+
+.account-info-item strong {
+    color: #34423a;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.account-info-item .status-active {
+    color: #2e7d32;
+}
+
+.account-info-item .status-verified {
+    color: #2e7d32;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .profile-form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .account-info-card {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .profile-card {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .profile-actions {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    .profile-actions .primary-btn,
+    .profile-actions .secondary-btn {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .account-info-item {
+        padding: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .profile-card {
+        padding: 14px;
+    }
+
+    .profile-card input,
+    .profile-card textarea {
+        font-size: 12px;
+        padding: 10px 11px;
+    }
+
+}
+/* =========================================================
+   SVOS CITIZEN - NOTICES
+   ========================================================= */
+
+.notices-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.notice-card {
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+}
+
+.notice-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.08);
+}
+
+.notice-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.notice-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    border-radius: 11px;
+    background: #e8f5e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+}
+
+.notice-meta {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.notice-category,
+.notice-priority {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.notice-category {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.notice-priority {
+    background: #fff8e1;
+    color: #f57f17;
+}
+
+.notice-priority.high {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.notice-priority.medium {
+    background: #fff8e1;
+    color: #f57f17;
+}
+
+.notice-priority.low {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.notice-card-body {
+    padding: 17px 0;
+}
+
+.notice-card-body h3 {
+    margin: 0 0 10px;
+    color: #26332a;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.notice-card-body p {
+    margin: 0;
+    color: #718078;
+    font-size: 13px;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+.notice-card-footer {
+    padding-top: 14px;
+    border-top: 1px solid #edf1ee;
+    color: #718078;
+    font-size: 11px;
+}
+
+.notices-grid .loading-state,
+.notices-grid .empty-state {
+    grid-column: 1 / -1;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 45px 20px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+}
+
+.notices-grid .loading-state {
+    color: #718078;
+    font-size: 14px;
+}
+
+.notices-grid .empty-state > div {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.notices-grid .empty-state h3 {
+    margin: 0 0 8px;
+    color: #34423a;
+    font-size: 18px;
+}
+
+.notices-grid .empty-state p {
+    margin: 0;
+    color: #718078;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .notices-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .notices-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .notice-card {
+        padding: 17px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .notice-card {
+        padding: 15px;
+    }
+
+    .notice-card-header {
+        align-items: flex-start;
+    }
+
+    .notice-icon {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        font-size: 21px;
+    }
+
+    .notice-card-body h3 {
+        font-size: 15px;
+    }
+
+    .notice-card-body p {
+        font-size: 12px;
+    }
+
+    .notice-meta {
+        justify-content: flex-end;
+    }
+
+}
+/* =========================================================
+   SVOS CITIZEN - GOVERNMENT SCHEMES
+   ========================================================= */
+
+.schemes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.scheme-card {
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+}
+
+.scheme-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.08);
+}
+
+.scheme-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.scheme-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 12px;
+    background: #e8f5e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.scheme-category {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.scheme-card-body {
+    padding: 17px 0;
+}
+
+.scheme-card-body h3 {
+    margin: 0 0 10px;
+    color: #26332a;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.scheme-card-body > p {
+    margin: 0 0 17px;
+    color: #718078;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.scheme-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 11px 0;
+    border-top: 1px solid #edf1ee;
+}
+
+.scheme-detail strong {
+    color: #34423a;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.scheme-detail span {
+    color: #718078;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.scheme-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding-top: 15px;
+    border-top: 1px solid #edf1ee;
+}
+
+.scheme-apply-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: #1b5e20;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.scheme-apply-btn:hover {
+    background: #154b19;
+}
+
+.scheme-info-text {
+    color: #718078;
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.schemes-grid .loading-state,
+.schemes-grid .empty-state {
+    grid-column: 1 / -1;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 45px 20px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+}
+
+.schemes-grid .loading-state {
+    color: #718078;
+    font-size: 14px;
+}
+
+.schemes-grid .empty-state > div {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.schemes-grid .empty-state h3 {
+    margin: 0 0 8px;
+    color: #34423a;
+    font-size: 18px;
+}
+
+.schemes-grid .empty-state p {
+    margin: 0;
+    color: #718078;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .schemes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .schemes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .scheme-card {
+        padding: 17px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+    .scheme-card {
+        padding: 15px;
+    }
+
+    .scheme-card-header {
+        align-items: flex-start;
+    }
+
+    .scheme-icon {
+        width: 43px;
+        height: 43px;
+        min-width: 43px;
+        font-size: 21px;
+    }
+
+    .scheme-card-body h3 {
+        font-size: 15px;
+    }
+
+    .scheme-card-body > p {
+        font-size: 12px;
+    }
+
+    .scheme-detail span {
+        font-size: 11px;
+    }
+
+}
+/* =========================================================
+   SERVICES PAGE
+   ========================================================= */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.service-card {
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ================= SERVICE HEADER ================= */
+
+.service-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.service-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 12px;
+    background: #e8f5e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.service-category {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* ================= SERVICE BODY ================= */
+
+.service-card-body {
+    padding: 17px 0;
+}
+
+.service-card-body h3 {
+    margin: 0 0 10px;
+    color: #26332a;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.service-card-body > p {
+    margin: 0 0 17px;
+    color: #718078;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* ================= SERVICE DETAILS ================= */
+
+.service-detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 11px 0;
+    border-top: 1px solid #edf1ee;
+}
+
+.service-detail span {
+    color: #718078;
+    font-size: 12px;
+}
+
+.service-detail strong {
+    color: #34423a;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: right;
+}
+
+
+/* ================= SERVICE FOOTER ================= */
+
+.service-card-footer {
+    padding-top: 15px;
+    border-top: 1px solid #edf1ee;
+}
+
+.service-apply-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background: #1b5e20;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.service-apply-btn:hover {
+    background: #154b19;
+}
+
+.service-apply-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* ================= LOADING / EMPTY ================= */
+
+.services-grid .loading-state,
+.services-grid .empty-state {
+    grid-column: 1 / -1;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 45px 20px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+}
+
+.services-grid .loading-state {
+    color: #718078;
+    font-size: 14px;
+}
+
+.services-grid .empty-state > div {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.services-grid .empty-state h3 {
+    margin: 0 0 8px;
+    color: #34423a;
+    font-size: 18px;
+}
+
+.services-grid .empty-state p {
+    margin: 0;
+    color: #718078;
+    font-size: 13px;
+}
+
+
+/* ================= MESSAGE ================= */
+
+.service-message {
+    grid-column: 1 / -1;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.service-message.success {
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    color: #2e7d32;
+}
+
+.service-message.error {
+    background: #ffebee;
+    border: 1px solid #ffcdd2;
+    color: #c62828;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .services-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 17px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .service-card {
+        padding: 15px;
+    }
+
+    .service-card-header {
+        align-items: flex-start;
+    }
+
+    .service-icon {
+        width: 43px;
+        height: 43px;
+        min-width: 43px;
+        font-size: 21px;
+    }
+
+    .service-category {
+        font-size: 9px;
+        padding: 4px 8px;
+    }
+
+    .service-card-body h3 {
+        font-size: 15px;
+    }
+
+    .service-card-body > p {
+        font-size: 12px;
+    }
+
+    .service-detail {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .service-detail strong {
+        text-align: left;
+    }
+
+    .service-apply-btn {
+        font-size: 12px;
+    }
+
+}
+/* =========================================================
+   TRACK COMPLAINT PAGE
+   ========================================================= */
+
+.track-complaint-card {
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+    padding: 25px;
+    margin-top: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.track-complaint-card .form-group {
+    margin-bottom: 20px;
+}
+
+.track-complaint-card label {
+    display: block;
+    margin-bottom: 8px;
+    color: #34423a;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.track-complaint-card input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 13px;
+    border: 1px solid #d8e2db;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #34423a;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.track-complaint-card input::placeholder {
+    color: #9aa59e;
+}
+
+.track-complaint-card input:focus {
+    border-color: #1b5e20;
+    box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.08);
+}
+
+
+/* ================= FORM ACTIONS ================= */
+
+.track-complaint-card .form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.track-complaint-card .primary-btn,
+.track-complaint-card .secondary-btn {
+    min-width: 150px;
+}
+
+.track-complaint-card .primary-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+
+/* ================= TRACK MESSAGE ================= */
+
+.track-complaint-card .form-message {
+    display: none;
+    margin-bottom: 18px;
+    padding: 11px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.track-complaint-card .form-message.success {
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    color: #2e7d32;
+}
+
+.track-complaint-card .form-message.error {
+    background: #ffebee;
+    border: 1px solid #ffcdd2;
+    color: #c62828;
+}
+
+
+/* =========================================================
+   COMPLAINT RESULT
+   ========================================================= */
+
+.complaint-track-result {
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+    padding: 22px;
+    margin-top: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.complaint-result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.complaint-result-header > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.complaint-result-label {
+    color: #718078;
+    font-size: 11px;
+}
+
+.complaint-result-id {
+    color: #26332a;
+    font-size: 16px;
+    font-weight: 600;
+    word-break: break-word;
+}
+
+
+/* ================= STATUS ================= */
+
+.complaint-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.complaint-status.pending {
+    background: #fff8e1;
+    color: #f57f17;
+}
+
+.complaint-status.in-progress {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.complaint-status.resolved {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.complaint-status.rejected {
+    background: #ffebee;
+    color: #c62828;
+}
+
+
+/* ================= RESULT GRID ================= */
+
+.complaint-result-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: 18px;
+    background: #edf1ee;
+    border: 1px solid #edf1ee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.complaint-result-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 15px;
+    background: #ffffff;
+}
+
+.complaint-result-item span {
+    color: #718078;
+    font-size: 11px;
+}
+
+.complaint-result-item strong {
+    color: #34423a;
+    font-size: 13px;
+    font-weight: 600;
+    word-break: break-word;
+}
+
+
+/* ================= DESCRIPTION ================= */
+
+.complaint-description {
+    margin-top: 18px;
+    padding: 17px;
+    background: #f8faf8;
+    border: 1px solid #edf1ee;
+    border-radius: 10px;
+}
+
+.complaint-description > span {
+    display: block;
+    margin-bottom: 8px;
+    color: #34423a;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.complaint-description p {
+    margin: 0;
+    color: #718078;
+    font-size: 13px;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .track-complaint-card {
+        padding: 20px;
+    }
+
+    .complaint-track-result {
+        padding: 18px;
+    }
+
+    .complaint-result-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .track-complaint-card {
+        padding: 17px;
+        border-radius: 12px;
+    }
+
+    .track-complaint-card .form-actions {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    .track-complaint-card .primary-btn,
+    .track-complaint-card .secondary-btn {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .complaint-result-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .complaint-status {
+        align-self: flex-start;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .track-complaint-card {
+        padding: 14px;
+    }
+
+    .track-complaint-card input {
+        font-size: 12px;
+        padding: 10px 11px;
+    }
+
+    .complaint-track-result {
+        padding: 15px;
+    }
+
+    .complaint-result-id {
+        font-size: 14px;
+    }
+
+    .complaint-result-item {
+        padding: 13px;
+    }
+
+    .complaint-description {
+        padding: 14px;
+    }
+
+}
+/* =========================================================
+   OFFICER - APPLICATIONS PAGE
+   ========================================================= */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.section-header h3 {
+    margin: 0;
+}
+
+
+/* ================= FILTERS ================= */
+
+.application-filters {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 18px;
+    background: #f8faf8;
+    border: 1px solid #e3ebe5;
+    border-radius: 12px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.filter-group label {
+    color: #34423a;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.filter-group input,
+.filter-group select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #d8e2db;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #34423a;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.filter-group input::placeholder {
+    color: #9aa59e;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+    border-color: #1b5e20;
+    box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.08);
+}
+
+
+/* ================= APPLICATION CONTAINER ================= */
+
+.applications-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+/* ================= APPLICATION CARD ================= */
+
+.application-card {
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+}
+
+.application-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ================= CARD HEADER ================= */
+
+.application-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.application-card-header > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.application-label {
+    color: #718078;
+    font-size: 10px;
+}
+
+.application-id {
+    color: #26332a;
+    font-size: 14px;
+    font-weight: 600;
+    word-break: break-word;
+}
+
+
+/* ================= STATUS ================= */
+
+.application-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.application-status.pending {
+    background: #fff8e1;
+    color: #f57f17;
+}
+
+.application-status.processing {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.application-status.approved {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.application-status.rejected {
+    background: #ffebee;
+    color: #c62828;
+}
+
+
+/* ================= CARD BODY ================= */
+
+.application-card-body {
+    padding: 17px 0;
+}
+
+.application-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: #edf1ee;
+    border: 1px solid #edf1ee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.application-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 13px;
+    background: #ffffff;
+    min-width: 0;
+}
+
+.application-info-item span {
+    color: #718078;
+    font-size: 10px;
+}
+
+.application-info-item strong {
+    color: #34423a;
+    font-size: 12px;
+    font-weight: 600;
+    word-break: break-word;
+}
+
+
+/* ================= CARD FOOTER ================= */
+
+.application-card-footer {
+    padding-top: 15px;
+    border-top: 1px solid #edf1ee;
+}
+
+.application-view-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background: #1b5e20;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.application-view-btn:hover {
+    background: #154b19;
+}
+
+.application-view-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* ================= LOADING / EMPTY ================= */
+
+.applications-container .loading-state,
+.applications-container .empty-state {
+    grid-column: 1 / -1;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 45px 20px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+}
+
+.applications-container .loading-state {
+    color: #718078;
+    font-size: 14px;
+}
+
+.applications-container .empty-state > div {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.applications-container .empty-state h3 {
+    margin: 0 0 8px;
+    color: #34423a;
+    font-size: 18px;
+}
+
+.applications-container .empty-state p {
+    margin: 0;
+    color: #718078;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .applications-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .application-filters {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .section-header .secondary-btn {
+        width: 100%;
+    }
+
+    .application-card {
+        padding: 17px;
+    }
+
+    .application-card-header {
+        flex-direction: column;
+    }
+
+    .application-status {
+        align-self: flex-start;
+    }
+
+    .application-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .application-filters {
+        padding: 14px;
+    }
+
+    .application-card {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .application-id {
+        font-size: 13px;
+    }
+
+    .application-info-item {
+        padding: 11px;
+    }
+
+    .application-info-item strong {
+        font-size: 11px;
+    }
+
+}
+/* =========================================================
+   OFFICER - CITIZENS
+   ========================================================= */
+
+.citizen-search {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 20px;
+    padding: 18px;
+    background: #f8faf8;
+    border: 1px solid #e3ebe5;
+    border-radius: 12px;
+}
+
+.citizen-search label {
+    color: #34423a;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.citizen-search input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #d8e2db;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #34423a;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.citizen-search input::placeholder {
+    color: #9aa59e;
+}
+
+.citizen-search input:focus {
+    border-color: #1b5e20;
+    box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.08);
+}
+
+
+/* ================= CITIZENS GRID ================= */
+
+.citizens-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+/* ================= CITIZEN CARD ================= */
+
+.citizen-card {
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+}
+
+.citizen-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ================= CARD HEADER ================= */
+
+.citizen-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.citizen-avatar {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 50%;
+    background: #e8f5e9;
+    color: #1b5e20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.citizen-header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+    flex: 1;
+}
+
+.citizen-header-info h3 {
+    margin: 0;
+    color: #26332a;
+    font-size: 16px;
+    font-weight: 600;
+    word-break: break-word;
+}
+
+.citizen-header-info span {
+    color: #718078;
+    font-size: 10px;
+    word-break: break-word;
+}
+
+
+/* ================= STATUS ================= */
+
+.citizen-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.citizen-status.active {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.citizen-status.inactive {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.citizen-status.pending {
+    background: #fff8e1;
+    color: #f57f17;
+}
+
+
+/* ================= CARD BODY ================= */
+
+.citizen-card-body {
+    padding: 17px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: #edf1ee;
+    border: 1px solid #edf1ee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.citizen-info-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 12px 13px;
+    background: #ffffff;
+}
+
+.citizen-info-item span {
+    color: #718078;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.citizen-info-item strong {
+    color: #34423a;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: right;
+    word-break: break-word;
+}
+
+
+/* ================= CARD FOOTER ================= */
+
+.citizen-card-footer {
+    padding-top: 15px;
+    border-top: 1px solid #edf1ee;
+}
+
+.citizen-view-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    background: #1b5e20;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.citizen-view-btn:hover {
+    background: #154b19;
+}
+
+.citizen-view-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* ================= LOADING / EMPTY ================= */
+
+.citizens-grid .loading-state,
+.citizens-grid .empty-state {
+    grid-column: 1 / -1;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 45px 20px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+}
+
+.citizens-grid .loading-state {
+    color: #718078;
+    font-size: 14px;
+}
+
+.citizens-grid .empty-state > div {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.citizens-grid .empty-state h3 {
+    margin: 0 0 8px;
+    color: #34423a;
+    font-size: 18px;
+}
+
+.citizens-grid .empty-state p {
+    margin: 0;
+    color: #718078;
+    font-size: 13px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .citizens-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .citizen-card {
+        padding: 17px;
+    }
+
+    .citizen-card-header {
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .citizen-search {
+        padding: 15px;
+    }
+
+    .citizen-card {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .citizen-card-header {
+        flex-wrap: wrap;
+    }
+
+    .citizen-status {
+        margin-left: auto;
+    }
+
+    .citizen-info-item {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .citizen-info-item strong {
+        text-align: left;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .citizen-search {
+        padding: 14px;
+    }
+
+    .citizen-search input {
+        font-size: 12px;
+        padding: 10px 11px;
+    }
+
+    .citizen-card {
+        padding: 14px;
+    }
+
+    .citizen-avatar {
+        width: 43px;
+        height: 43px;
+        min-width: 43px;
+        font-size: 15px;
+    }
+
+    .citizen-header-info h3 {
+        font-size: 14px;
+    }
+
+    .citizen-header-info span {
+        font-size: 9px;
+    }
+
+    .citizen-info-item {
+        padding: 11px;
+    }
+
+    .citizen-info-item strong {
+        font-size: 11px;
+    }
+
+    .citizen-view-btn {
+        font-size: 11px;
+    }
+
+}
+/* =========================================================
+   OFFICER - EMERGENCY CONTACTS
+   ========================================================= */
+
+.emergency-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 18px 20px;
+    background: #fff8e1;
+    border: 1px solid #ffe082;
+    border-radius: 12px;
+}
+
+.emergency-notice-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 10px;
+    background: #fff3cd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+}
+
+.emergency-notice h3 {
+    margin: 0 0 5px;
+    color: #7a5700;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.emergency-notice p {
+    margin: 0;
+    color: #806b32;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* ================= EMERGENCY GRID ================= */
+
+.emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+
+/* ================= EMERGENCY CARD ================= */
+
+.emergency-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+}
+
+.emergency-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ================= ICON ================= */
+
+.emergency-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    background: #e8f5e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+
+/* ================= INFO ================= */
+
+.emergency-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.emergency-info h3 {
+    margin: 0 0 7px;
+    color: #26332a;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.emergency-info p {
+    margin: 0 0 14px;
+    color: #718078;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* ================= CALL BUTTON ================= */
+
+.emergency-call-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px 12px;
+    border-radius: 8px;
+    background: #1b5e20;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.emergency-call-btn:hover {
+    background: #154b19;
+}
+
+.emergency-call-btn:active {
+    transform: scale(0.98);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+
+    .emergency-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .emergency-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .emergency-notice {
+        padding: 16px;
+    }
+
+    .emergency-card {
+        padding: 17px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .emergency-notice {
+        gap: 11px;
+        padding: 14px;
+    }
+
+    .emergency-notice-icon {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        font-size: 18px;
+    }
+
+    .emergency-notice h3 {
+        font-size: 14px;
+    }
+
+    .emergency-notice p {
+        font-size: 11px;
+    }
+
+    .emergency-card {
+        padding: 15px;
+        gap: 12px;
+        border-radius: 12px;
+    }
+
+    .emergency-icon {
+        width: 43px;
+        height: 43px;
+        min-width: 43px;
+        font-size: 21px;
+    }
+
+    .emergency-info h3 {
+        font-size: 14px;
+    }
+
+    .emergency-info p {
+        font-size: 11px;
+    }
+
+    .emergency-call-btn {
+        font-size: 11px;
+    }
+
+}
+/* =========================================================
+   OFFICER - NOTICES
+   ========================================================= */
+
+.notice-filters {
+    display: grid;
+    grid-template-columns: 200px 200px 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 18px;
+    background: #f8faf8;
+    border: 1px solid #e3ebe5;
+    border-radius: 12px;
+}
+
+.notice-filters .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.notice-filters .filter-group label {
+    color: #34423a;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.notice-filters input,
+.notice-filters select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: 1px solid #d8e2db;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #34423a;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.notice-filters input::placeholder {
+    color: #9aa59e;
+}
+
+.notice-filters input:focus,
+.notice-filters select:focus {
+    border-color: #1b5e20;
+    box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.08);
+}
+
+
+/* ================= NOTICES GRID ================= */
+
+.notices-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+/* ================= NOTICE CARD ================= */
+
+.notice-card {
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition: 0.2s ease;
+}
+
+.notice-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ================= CARD HEADER ================= */
+
+.notice-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.notice-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 12px;
+    background: #e8f5e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+}
+
+.notice-header-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+}
+
+.notice-category {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #e8f5e9;
+    color: #2e7d32;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.notice-priority {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.notice-priority.high {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.notice-priority.medium {
+    background: #fff8e1;
+    color: #f57f17;
+}
+
+.notice-priority.low {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+
+/* ================= CARD BODY ================= */
+
+.notice-card-body {
+    padding: 17px 0;
+}
+
+.notice-card-body h3 {
+    margin: 0 0 10px;
+    color: #26332a;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.notice-card-body > p {
+    margin: 0 0 17px;
+    color: #718078;
+    font-size: 13px;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+.notice-detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 11px 0;
+    border-top: 1px solid #edf1ee;
+}
+
+.notice-detail span {
+    color: #718078;
+    font-size: 11px;
+}
+
+.notice-detail strong {
+    color: #34423a;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: right;
+}
+
+
+/* ================= CARD FOOTER ================= */
+
+.notice-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 14px;
+    border-top: 1px solid #edf1ee;
+}
+
+.notice-id {
+    color: #8a958e;
+    font-size: 10px;
+    word-break: break-word;
+}
+
+
+/* ================= LOADING / EMPTY ================= */
+
+.notices-grid .loading-state,
+.notices-grid .empty-state {
+    grid-column: 1 / -1;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 45px 20px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e3ebe5;
+    border-radius: 14px;
+}
+
+.notices-grid .loading-state {
+    color: #718078;
+    font-size: 14px;
+}
+
+.notices-grid .empty-state > div {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.notices-grid .empty-state h3 {
+    margin: 0 0 8px;
+    color: #34423a;
+    font-size: 18px;
+}
+
+.notices-grid .empty-state p {
+    margin: 0;
+    color: #718078;
+    font-size: 13px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .notice-filters {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .notice-filters .filter-group:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .notices-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .notice-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .notice-filters .filter-group:last-child {
+        grid-column: auto;
+    }
+
+    .notice-card {
+        padding: 17px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .notice-filters {
+        padding: 15px;
+    }
+
+    .notice-card {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .notice-header-info {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .notice-priority {
+        align-self: flex-start;
+    }
+
+    .notice-detail {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .notice-detail strong {
+        text-align: left;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .notice-filters {
+        padding: 14px;
+    }
+
+    .notice-filters input,
+    .notice-filters select {
+        font-size: 12px;
+        padding: 10px 11px;
+    }
+
+    .notice-card {
+        padding: 14px;
+    }
+
+    .notice-icon {
+        width: 43px;
+        height: 43px;
+        min-width: 43px;
+        font-size: 21px;
+    }
+
+    .notice-card-body h3 {
+        font-size: 15px;
+    }
+
+    .notice-card-body > p {
+        font-size: 12px;
+    }
+
+    .notice-category,
+    .notice-priority {
+        font-size: 9px;
+        padding: 4px 8px;
+    }
+
+    .notice-detail span,
+    .notice-detail strong {
+        font-size: 11px;
+    }
+}
+/* =========================================================
+   OFFICER PROFILE
+   ========================================================= */
+
+.profile-card-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e8eee8;
+}
+
+.profile-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #1b5e20;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.profile-card-header h2 {
+    margin: 0 0 5px;
+    font-size: 22px;
+    color: #1b5e20;
+}
+
+.profile-card-header p {
+    margin: 0;
+    color: #6b756b;
+    font-size: 14px;
+}
+
+.profile-full-width {
+    grid-column: 1 / -1;
+}
+
+.account-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.account-info-card {
+    background: #ffffff;
+    border: 1px solid #e4ebe4;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 3px 12px rgba(27, 94, 32, 0.06);
+}
+
+.account-info-card span {
+    display: block;
+    color: #737b73;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.account-info-card strong {
+    display: block;
+    color: #263326;
+    font-size: 15px;
+}
+
+.account-info-card .account-active {
+    color: #2e7d32;
+}
+
+
+/* =========================================================
+   PROFILE FORM MESSAGE
+   ========================================================= */
+
+.form-message {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+.form-message.success {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.form-message.error {
+    background: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+
+
+/* =========================================================
+   PROFILE ACTION BUTTONS
+   ========================================================= */
+
+.profile-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e8eee8;
+}
+
+.primary-btn,
+.secondary-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 11px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.primary-btn {
+    background: #1b5e20;
+    color: #ffffff;
+}
+
+.primary-btn:hover {
+    background: #2e7d32;
+}
+
+.primary-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.secondary-btn {
+    background: #f1f4f1;
+    color: #374237;
+    border: 1px solid #dce4dc;
+}
+
+.secondary-btn:hover {
+    background: #e5ebe5;
+}
+
+
+/* =========================================================
+   OFFICER PROFILE INPUTS
+   ========================================================= */
+
+.profile-card .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.profile-card .form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374237;
+}
+
+.profile-card .form-group input,
+.profile-card .form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 13px;
+    border: 1px solid #d7e0d7;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #263326;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.profile-card .form-group input:focus,
+.profile-card .form-group textarea:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.10);
+}
+
+.profile-card .form-group input[readonly] {
+    background: #f5f7f5;
+    color: #687168;
+    cursor: not-allowed;
+}
+
+.profile-card .form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+
+/* =========================================================
+   OFFICER PROFILE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .account-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .profile-card-header {
+        align-items: flex-start;
+    }
+
+    .profile-avatar {
+        width: 56px;
+        height: 56px;
+        font-size: 22px;
+    }
+
+    .profile-card-header h2 {
+        font-size: 19px;
+    }
+
+    .profile-full-width {
+        grid-column: auto;
+    }
+
+    .account-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-actions {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .profile-card-header {
+        gap: 12px;
+    }
+
+    .profile-avatar {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .profile-card-header h2 {
+        font-size: 17px;
+    }
+
+    .account-info-card {
+        padding: 16px;
+    }
+
+}
+/* =========================================================
+   OFFICER SCHEMES
+   ========================================================= */
+
+.scheme-filters {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.scheme-filters .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.scheme-filters label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374237;
+}
+
+.scheme-filters select,
+.scheme-filters input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 13px;
+    border: 1px solid #d7e0d7;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #263326;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+}
+
+.scheme-filters select:focus,
+.scheme-filters input:focus {
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.10);
+}
+
+
+/* =========================================================
+   SCHEMES GRID
+   ========================================================= */
+
+.schemes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.scheme-card {
+    background: #ffffff;
+    border: 1px solid #e3ebe3;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(27, 94, 32, 0.06);
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.scheme-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(27, 94, 32, 0.10);
+}
+
+
+/* =========================================================
+   SCHEME HEADER
+   ========================================================= */
+
+.scheme-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px;
+    border-bottom: 1px solid #edf1ed;
+}
+
+.scheme-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #e8f5e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.scheme-header-info {
+    min-width: 0;
+}
+
+.scheme-header-info h3 {
+    margin: 0 0 7px;
+    color: #1b5e20;
+    font-size: 17px;
+    line-height: 1.35;
+}
+
+.scheme-category {
+    display: inline-block;
+    padding: 4px 9px;
+    border-radius: 20px;
+    background: #f1f6f1;
+    color: #4d654f;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+
+/* =========================================================
+   SCHEME BODY
+   ========================================================= */
+
+.scheme-card-body {
+    padding: 18px;
+}
+
+.scheme-detail {
+    margin-bottom: 15px;
+}
+
+.scheme-detail:last-of-type {
+    margin-bottom: 12px;
+}
+
+.scheme-detail strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #374237;
+    font-size: 13px;
+}
+
+.scheme-detail p {
+    margin: 0;
+    color: #687168;
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.scheme-status-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 13px;
+    border-top: 1px solid #edf1ed;
+}
+
+.scheme-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.scheme-status.active {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.scheme-status.inactive {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.scheme-id {
+    color: #7a827a;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SCHEME FOOTER
+   ========================================================= */
+
+.scheme-card-footer {
+    padding: 14px 18px;
+    background: #fafcf9;
+    border-top: 1px solid #edf1ed;
+}
+
+.scheme-apply-btn {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #1b5e20;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.scheme-apply-btn:hover {
+    background: #2e7d32;
+}
+
+
+/* =========================================================
+   SCHEME RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .schemes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .scheme-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .schemes-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .scheme-card-header {
+        padding: 15px;
+    }
+
+    .scheme-card-body {
+        padding: 15px;
+    }
+
+    .scheme-card-footer {
+        padding: 12px 15px;
+    }
+
+    .scheme-header-info h3 {
+        font-size: 16px;
+    }
+
+    .scheme-status-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+/* =========================================================
+   OFFICER COMPLAINTS
+   ========================================================= */
+
+.complaint-filters {
+    display: grid;
+    grid-template-columns: 180px 180px minmax(220px, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.complaint-search {
+    min-width: 0;
+}
+
+.complaint-search input {
+    width: 100%;
+}
+
+
+/* =========================================================
+   COMPLAINT CONTAINER
+   ========================================================= */
+
+.officer-complaints-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+
+/* =========================================================
+   COMPLAINT CARD
+   ========================================================= */
+
+.officer-complaint-card {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e7eee8;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.officer-complaint-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 9px 24px rgba(0, 0, 0, 0.09);
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.officer-complaint-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px;
+    border-bottom: 1px solid #edf2ee;
+}
+
+.complaint-header-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    min-width: 0;
+}
+
+.complaint-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8f5e9;
+    border-radius: 12px;
+    font-size: 22px;
+}
+
+.complaint-header-info h3 {
+    margin: 0 0 6px;
+    color: #1b5e20;
+    font-size: 17px;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.complaint-id {
+    display: inline-block;
+    color: #777;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.officer-complaint-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.officer-complaint-status.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.officer-complaint-status.processing {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.officer-complaint-status.resolved {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.officer-complaint-status.rejected {
+    background: #ffebee;
+    color: #c62828;
+}
+
+
+/* =========================================================
+   CARD BODY
+   ========================================================= */
+
+.officer-complaint-body {
+    padding: 20px;
+}
+
+.complaint-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.complaint-info-item {
+    min-width: 0;
+}
+
+.complaint-info-item span,
+.complaint-description > span {
+    display: block;
+    margin-bottom: 5px;
+    color: #777;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.complaint-info-item strong {
+    display: block;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.45;
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.complaint-description {
+    padding: 15px;
+    background: #f8faf8;
+    border-radius: 10px;
+}
+
+.complaint-description p {
+    margin: 0;
+    color: #555;
+    font-size: 13px;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+.complaint-updated {
+    margin-top: 14px;
+    color: #888;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   CARD FOOTER
+   ========================================================= */
+
+.officer-complaint-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 20px;
+    background: #fafcfb;
+    border-top: 1px solid #edf2ee;
+}
+
+.officer-complaint-view-btn {
+    border: none;
+    padding: 9px 17px;
+    border-radius: 8px;
+    background: #1b5e20;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.officer-complaint-view-btn:hover {
+    background: #2e7d32;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   LOADING / EMPTY STATE
+   ========================================================= */
+
+#complaintsLoading {
+    padding: 35px 20px;
+    text-align: center;
+    color: #777;
+}
+
+#complaintsEmpty {
+    padding: 40px 20px;
+    text-align: center;
+    color: #777;
+    background: #ffffff;
+    border: 1px dashed #cfd8d0;
+    border-radius: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .officer-complaints-container {
+        grid-template-columns: 1fr;
+    }
+
+    .complaint-filters {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .complaint-search {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .complaint-filters {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .complaint-search {
+        grid-column: auto;
+    }
+
+    .officer-complaint-header {
+        padding: 15px;
+    }
+
+    .officer-complaint-body {
+        padding: 15px;
+    }
+
+    .complaint-info-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .complaint-header-info h3 {
+        font-size: 15px;
+    }
+
+    .officer-complaint-status {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+
+    .officer-complaint-footer {
+        padding: 12px 15px;
+    }
+
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SVOS - Manage Schemes</title>
+
+    <!-- Admin CSS -->
+      <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <span>🏡</span>
+            SVOS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" >
+                🏠 Dashboard
+            </a>
+
+            <a href="users.html">
+                👥 Manage Users
+            </a>
+
+            <a href="complaints.html">
+                📢 Manage Complaints
+            </a>
+
+            <a href="notices.html">
+                📋 Manage Notices
+            </a>
+
+            <a href="schemes.html" class="active">
+                🎯 Manage Schemes
+            </a>
+
+            <a href="settings.html">
+                ⚙️ System Settings
+            </a>
+
+            <a href="reports.html">
+                📊 Reports & Analytics
+            </a>
+
+            <a href="#" id="logoutBtn" class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ============================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ============================= -->
+
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <h1>
+                Manage Schemes
+            </h1>
+
+            <div class="user-info">
+
+                <div>
+
+                    <strong id="userName">
+                        Administrator
+                    </strong>
+
+                    <small>
+                        System Administrator
+                    </small>
+
+                </div>
+
+                <div class="user-avatar">
+                    A
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ============================= -->
+        <!-- PAGE CONTENT -->
+        <!-- ============================= -->
+
+        <section class="dashboard-content">
+
+            <!-- PAGE HEADER -->
+
+            <div class="welcome-box">
+
+                <h2>
+                    Government Schemes 🎯
+                </h2>
+
+                <p>
+                    Manage government schemes and make
+                    relevant scheme information available
+                    to citizens.
+                </p>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- SEARCH + FILTER -->
+            <!-- ============================= -->
+
+            <div class="scheme-toolbar">
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="schemeSearch"
+                        placeholder="Search schemes..."
+                    >
+
+                </div>
+
+
+                <div class="filter-box">
+
+                    <select id="schemeStatusFilter">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="Active">
+                            Active
+                        </option>
+
+                        <option value="Inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="addSchemeBtn"
+                    class="primary-btn"
+                >
+                    ➕ Add Scheme
+                </button>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- SCHEMES CONTAINER -->
+            <!-- ============================= -->
+
+            <div
+                id="schemesContainer"
+                class="schemes-grid"
+            >
+
+                <div class="loading-state">
+
+                    <div>
+                        Loading schemes...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ============================= -->
+<!-- JAVASCRIPT -->
+<!-- ============================= -->
+
+<script src="js/admin.js"></script>
+
+<script src="js/schemes.js"></script>
+
+</body>
+
+</html>

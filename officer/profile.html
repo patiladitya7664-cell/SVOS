@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SVOS - Officer Profile</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <span>🏡</span>
+            SVOS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" >
+                🏠 Dashboard
+            </a>
+
+            <a href="citizens.html">
+                👥 Manage Citizens
+            </a>
+
+            <a href="complaints.html">
+                📢 Manage Complaints
+            </a>
+
+            <a href="applications.html">
+                📝 Service Applications
+            </a>
+
+            <a href="notices.html">
+                📋 Notices
+            </a>
+
+            <a href="schemes.html">
+                🎯 Schemes
+            </a>
+
+            <a href="emergency.html">
+                🚨 Emergency Alerts
+            </a>
+
+            <a href="reports.html">
+                📊 Reports & Analytics
+            </a>
+
+            <a href="profile.html" class="active">
+                👤 Profile
+            </a>
+
+            <a href="#" id="logoutBtn" class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="dashboard-main">
+
+        <header class="topbar">
+
+            <h1>
+                Officer Profile
+            </h1>
+
+            <div class="user-info">
+
+                <div>
+
+                    <strong id="userName">
+                        Panchayat Officer
+                    </strong>
+
+                    <small>
+                        Panchayat Officer
+                    </small>
+
+                </div>
+
+                <div class="user-avatar">
+                    O
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="dashboard-content">
+
+            <div class="welcome-box">
+
+                <h2>
+                    My Profile 👤
+                </h2>
+
+                <p>
+                    View and update your Panchayat
+                    Officer profile information.
+                </p>
+
+            </div>
+
+
+            <!-- ================= PROFILE ================= -->
+
+            <div class="profile-card">
+
+                <div class="profile-card-header">
+
+                    <div class="profile-avatar">
+                        O
+                    </div>
+
+                    <div>
+
+                        <h2 id="profileDisplayName">
+                            Panchayat Officer
+                        </h2>
+
+                        <p>
+                            Panchayat Officer
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= MESSAGE ================= -->
+
+                <div
+                    id="profileMessage"
+                    class="form-message"
+                    style="display: none;"
+                ></div>
+
+
+                <!-- ================= FORM ================= -->
+
+                <form id="profileForm">
+
+                    <div class="profile-form-grid">
+
+
+                        <!-- NAME -->
+
+                        <div class="form-group">
+
+                            <label for="profileName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="profileName"
+                                placeholder="Enter your full name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="form-group">
+
+                            <label for="profileEmail">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="profileEmail"
+                                placeholder="Enter your email"
+                                readonly
+                            >
+
+                        </div>
+
+
+                        <!-- MOBILE -->
+
+                        <div class="form-group">
+
+                            <label for="profileMobile">
+                                Mobile Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="profileMobile"
+                                placeholder="Enter mobile number"
+                            >
+
+                        </div>
+
+
+                        <!-- ROLE -->
+
+                        <div class="form-group">
+
+                            <label for="profileRole">
+                                Role
+                            </label>
+
+                            <input
+                                type="text"
+                                id="profileRole"
+                                value="Panchayat Officer"
+                                readonly
+                            >
+
+                        </div>
+
+
+                        <!-- VILLAGE -->
+
+                        <div class="form-group">
+
+                            <label for="profileVillage">
+                                Village
+                            </label>
+
+                            <input
+                                type="text"
+                                id="profileVillage"
+                                placeholder="Enter village"
+                            >
+
+                        </div>
+
+
+                        <!-- TALUKA -->
+
+                        <div class="form-group">
+
+                            <label for="profileTaluka">
+                                Taluka
+                            </label>
+
+                            <input
+                                type="text"
+                                id="profileTaluka"
+                                placeholder="Enter taluka"
+                            >
+
+                        </div>
+
+
+                        <!-- DISTRICT -->
+
+                        <div class="form-group">
+
+                            <label for="profileDistrict">
+                                District
+                            </label>
+
+                            <input
+                                type="text"
+                                id="profileDistrict"
+                                placeholder="Enter district"
+                            >
+
+                        </div>
+
+
+                        <!-- ADDRESS -->
+
+                        <div class="form-group profile-full-width">
+
+                            <label for="profileAddress">
+                                Address
+                            </label>
+
+                            <textarea
+                                id="profileAddress"
+                                placeholder="Enter complete address"
+                                rows="4"
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= ACTIONS ================= -->
+
+                    <div class="profile-actions">
+
+                        <button
+                            type="button"
+                            id="resetProfileBtn"
+                            class="secondary-btn"
+                        >
+                            Reset
+                        </button>
+
+                        <button
+                            type="submit"
+                            id="saveProfileBtn"
+                            class="primary-btn"
+                        >
+                            Save Changes
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- ================= ACCOUNT INFORMATION ================= -->
+
+            <div class="dashboard-section">
+
+                <h3>
+                    Account Information
+                </h3>
+
+                <div class="account-info-grid">
+
+                    <div class="account-info-card">
+
+                        <span>
+                            Account Type
+                        </span>
+
+                        <strong>
+                            Panchayat Officer
+                        </strong>
+
+                    </div>
+
+
+                    <div class="account-info-card">
+
+                        <span>
+                            Account Status
+                        </span>
+
+                        <strong class="account-active">
+                            Active
+                        </strong>
+
+                    </div>
+
+
+                    <div class="account-info-card">
+
+                        <span>
+                            Access Level
+                        </span>
+
+                        <strong>
+                            Officer
+                        </strong>
+
+                    </div>
+
+
+                    <div class="account-info-card">
+
+                        <span>
+                            Last Updated
+                        </span>
+
+                        <strong id="profileUpdatedDate">
+                            Not available
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= FIREBASE LOGOUT ================= -->
+
+<script type="module">
+
+    import {
+        auth
+    } from "../js/firebase-config.js";
+
+    import {
+        signOut
+    } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+
+    const storedUser =
+        JSON.parse(
+            localStorage.getItem("svosUser")
+        );
+
+
+    if (storedUser) {
+
+        const userName =
+            document.getElementById(
+                "userName"
+            );
+
+        if (userName) {
+
+            userName.textContent =
+                storedUser.name ||
+                "Panchayat Officer";
+
+        }
+
+    }
+
+
+    const logoutBtn =
+        document.getElementById(
+            "logoutBtn"
+        );
+
+
+    if (logoutBtn) {
+
+        logoutBtn.addEventListener(
+            "click",
+            async function (event) {
+
+                event.preventDefault();
+
+                try {
+
+                    await signOut(auth);
+
+                } catch (error) {
+
+                    console.error(
+                        "Logout error:",
+                        error
+                    );
+
+                }
+
+                localStorage.removeItem(
+                    "svosUser"
+                );
+
+                window.location.href =
+                    "../login.html";
+
+            }
+        );
+
+    }
+
+</script>
+
+
+<script src="js/officer-profile.js"></script>
+
+</body>
+
+</html>

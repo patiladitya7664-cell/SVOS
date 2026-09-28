@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>SVOS - Apply for Service</title>
+
+  <!-- Existing SVOS CSS -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="css/apply-service.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       DASHBOARD LAYOUT
+  ====================================================== -->
+
+  <div class="dashboard-layout">
+
+    <!-- ===================================================
+         SIDEBAR
+    ==================================================== -->
+
+    <aside class="sidebar">
+
+      <div class="sidebar-logo">
+        <span>🏡</span>
+        SVOS
+      </div>
+
+      <nav class="sidebar-nav">
+
+        <a href="dashboard.html">
+          🏠 Dashboard
+        </a>
+
+        <a href="services.html" class="active">
+          📝 Apply for Services
+        </a>
+
+        <a href="complaints.html">
+          📢 Lodge Complaint
+        </a>
+
+        <a href="track-complaint.html">
+          🔍 Track Complaint
+        </a>
+
+        <a href="notices.html">
+          📋 Notices
+        </a>
+
+        <a href="schemes.html">
+          🎯 Schemes
+        </a>
+
+        <a href="emergency.html">
+          🚨 Emergency Contacts
+        </a>
+
+        <a href="profile.html">
+          👤 Profile
+        </a>
+
+        <a href="certificate.html">
+          📄 Certificates
+        </a>
+
+        <a
+          href="#"
+          id="logoutBtn"
+          class="logout-btn"
+        >
+          🚪 Logout
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- ===================================================
+         MAIN CONTENT
+    ==================================================== -->
+
+    <main class="dashboard-main">
+
+      <!-- =================================================
+           TOPBAR
+      ================================================== -->
+
+      <header class="topbar">
+
+        <div class="topbar-left">
+
+          <button
+            type="button"
+            id="mobileMenuBtn"
+            class="mobile-menu-btn"
+            aria-label="Open menu"
+          >
+            ☰
+          </button>
+
+          <h1>
+            Apply for Service
+          </h1>
+
+        </div>
+
+        <div class="user-info">
+
+          <div>
+            <strong id="userName">
+              Citizen
+            </strong>
+
+            <small>
+              Citizen
+            </small>
+          </div>
+
+          <div
+            class="user-avatar"
+            id="userAvatar"
+          >
+            C
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <!-- =================================================
+           PAGE CONTENT
+      ================================================== -->
+
+      <section class="dashboard-content">
+
+        <!-- ===============================================
+             PAGE INTRO
+        ================================================ -->
+
+        <div class="welcome-box apply-intro">
+
+          <div>
+
+            <h2>
+              Online Service Application 📝
+            </h2>
+
+            <p>
+              Fill in the details below to submit
+              your application to the concerned
+              Panchayat department.
+            </p>
+
+          </div>
+
+          <a
+            href="services.html"
+            class="back-services-btn"
+          >
+            ← Back to Services
+          </a>
+
+        </div>
+
+
+        <!-- ===============================================
+             APPLICATION CONTAINER
+        ================================================ -->
+
+        <div class="application-page-grid">
+
+          <!-- =============================================
+               SELECTED SERVICE
+          ============================================== -->
+
+          <div class="application-card service-summary-card">
+
+            <div class="card-heading">
+
+              <span class="heading-icon">
+                🏛️
+              </span>
+
+              <div>
+
+                <h2>
+                  Selected Service
+                </h2>
+
+                <p>
+                  Service you are applying for
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="selected-service">
+
+              <div
+                class="selected-service-icon"
+                id="serviceIcon"
+              >
+                📄
+              </div>
+
+              <div>
+
+                <h3 id="serviceName">
+                  Loading Service...
+                </h3>
+
+                <p id="serviceDescription">
+                  Please wait while service details
+                  are loaded.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <!-- =========================================
+                 REQUIRED DOCUMENTS
+            ========================================== -->
+
+            <div class="documents-section">
+
+              <h3>
+                Required Documents
+              </h3>
+
+              <ul id="requiredDocuments">
+
+                <li>
+                  Loading documents...
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <!-- =========================================
+                 APPLICATION STATUS INFO
+            ========================================== -->
+
+            <div class="info-box">
+
+              <span>
+                ℹ️
+              </span>
+
+              <p>
+                After submission, your application
+                will be reviewed by the concerned
+                authority. You can track its status
+                using your Application ID.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- =============================================
+               APPLICATION FORM
+          ============================================== -->
+
+          <div class="application-card">
+
+            <div class="card-heading">
+
+              <span class="heading-icon">
+                📋
+              </span>
+
+              <div>
+
+                <h2>
+                  Application Details
+                </h2>
+
+                <p>
+                  Enter accurate information
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <form
+              id="serviceApplicationForm"
+              novalidate
+            >
+
+              <!-- =======================================
+                   SERVICE TYPE
+              ======================================== -->
+
+              <div class="form-group">
+
+                <label for="serviceType">
+                  Service
+                </label>
+
+                <input
+                  type="text"
+                  id="serviceType"
+                  name="serviceType"
+                  readonly
+                >
+
+              </div>
+
+
+              <!-- =======================================
+                   APPLICANT INFORMATION
+              ======================================== -->
+
+              <div class="form-section-title">
+
+                <span>
+                  👤
+                </span>
+
+                <h3>
+                  Applicant Information
+                </h3>
+
+              </div>
+
+
+              <div class="form-row">
+
+                <div class="form-group">
+
+                  <label for="applicantName">
+                    Full Name
+                    <span>*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="applicantName"
+                    name="applicantName"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                    required
+                  >
+
+                  <small
+                    class="field-error"
+                    id="applicantNameError"
+                  ></small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="mobile">
+                    Mobile Number
+                    <span>*</span>
+                  </label>
+
+                  <input
+                    type="tel"
+                    id="mobile"
+                    name="mobile"
+                    placeholder="Enter 10-digit mobile number"
+                    maxlength="10"
+                    inputmode="numeric"
+                    autocomplete="tel"
+                    required
+                  >
+
+                  <small
+                    class="field-error"
+                    id="mobileError"
+                  ></small>
+
+                </div>
+
+              </div>
+
+
+              <div class="form-row">
+
+                <div class="form-group">
+
+                  <label for="email">
+                    Email Address
+                  </label>
+
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter email address"
+                    autocomplete="email"
+                  >
+
+                  <small
+                    class="field-error"
+                    id="emailError"
+                  ></small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="aadhaarLastFour">
+                    Aadhaar Last 4 Digits
+                  </label>
+
+                  <input
+                    type="text"
+                    id="aadhaarLastFour"
+                    name="aadhaarLastFour"
+                    placeholder="XXXX"
+                    maxlength="4"
+                    inputmode="numeric"
+                  >
+
+                  <small class="field-help">
+                    Do not enter your complete Aadhaar number.
+                  </small>
+
+                </div>
+
+              </div>
+
+
+              <!-- =======================================
+                   ADDRESS
+              ======================================== -->
+
+              <div class="form-section-title">
+
+                <span>
+                  🏠
+                </span>
+
+                <h3>
+                  Address Details
+                </h3>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="address">
+                  Complete Address
+                  <span>*</span>
+                </label>
+
+                <textarea
+                  id="address"
+                  name="address"
+                  rows="4"
+                  placeholder="Enter your complete residential address"
+                  required
+                ></textarea>
+
+                <small
+                  class="field-error"
+                  id="addressError"
+                ></small>
+
+              </div>
+
+
+              <div class="form-row">
+
+                <div class="form-group">
+
+                  <label for="village">
+                    Village
+                    <span>*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="village"
+                    name="village"
+                    placeholder="Enter village name"
+                    required
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="district">
+                    District
+                    <span>*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="district"
+                    name="district"
+                    placeholder="Enter district"
+                    required
+                  >
+
+                </div>
+
+              </div>
+
+
+              <div class="form-row">
+
+                <div class="form-group">
+
+                  <label for="state">
+                    State
+                    <span>*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="state"
+                    name="state"
+                    placeholder="Enter state"
+                    value="Maharashtra"
+                    required
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label for="pincode">
+                    PIN Code
+                    <span>*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="pincode"
+                    name="pincode"
+                    placeholder="Enter 6-digit PIN code"
+                    maxlength="6"
+                    inputmode="numeric"
+                    required
+                  >
+
+                </div>
+
+              </div>
+
+
+              <!-- =======================================
+                   APPLICATION DETAILS
+              ======================================== -->
+
+              <div class="form-section-title">
+
+                <span>
+                  📝
+                </span>
+
+                <h3>
+                  Application Details
+                </h3>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="purpose">
+                  Purpose / Additional Details
+                  <span>*</span>
+                </label>
+
+                <textarea
+                  id="purpose"
+                  name="purpose"
+                  rows="5"
+                  placeholder="Explain the purpose or provide additional details related to your application"
+                  required
+                ></textarea>
+
+                <small
+                  class="field-error"
+                  id="purposeError"
+                ></small>
+
+              </div>
+
+
+              <!-- =======================================
+                   DOCUMENT INFORMATION
+              ======================================== -->
+
+              <div class="form-group">
+
+                <label for="documentInfo">
+                  Document Details
+                </label>
+
+                <textarea
+                  id="documentInfo"
+                  name="documentInfo"
+                  rows="4"
+                  placeholder="Mention the documents you are providing"
+                ></textarea>
+
+              </div>
+
+
+              <!-- =======================================
+                   DECLARATION
+              ======================================== -->
+
+              <div class="declaration-box">
+
+                <input
+                  type="checkbox"
+                  id="declaration"
+                  name="declaration"
+                  required
+                >
+
+                <label for="declaration">
+
+                  I hereby declare that the information
+                  provided in this application is true and
+                  correct to the best of my knowledge. I
+                  understand that providing incorrect
+                  information may result in rejection of
+                  my application.
+
+                </label>
+
+              </div>
+
+
+              <!-- =======================================
+                   MESSAGE
+              ======================================== -->
+
+              <div
+                id="applicationMessage"
+                class="application-message"
+                role="alert"
+              ></div>
+
+
+              <!-- =======================================
+                   FORM ACTIONS
+              ======================================== -->
+
+              <div class="form-actions">
+
+                <a
+                  href="services.html"
+                  class="cancel-btn"
+                >
+                  Cancel
+                </a>
+
+                <button
+                  type="submit"
+                  id="submitApplication"
+                  class="submit-btn"
+                >
+                  <span>
+                    📨
+                  </span>
+
+                  Submit Application
+                </button>
+
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- =====================================================
+       SUCCESS MODAL
+  ====================================================== -->
+
+  <div
+    id="successModal"
+    class="success-modal hidden"
+  >
+
+    <div class="success-overlay"></div>
+
+    <div class="success-modal-box">
+
+      <div class="success-icon">
+        ✓
+      </div>
+
+      <h2>
+        Application Submitted
+      </h2>
+
+      <p>
+        Your application has been successfully
+        submitted to the concerned authority.
+      </p>
+
+      <div class="application-id-box">
+
+        <span>
+          Application ID
+        </span>
+
+        <strong id="applicationId">
+          SVOS-XXXXXXXX
+        </strong>
+
+      </div>
+
+      <p class="success-note">
+        Please save your Application ID to track
+        your application status.
+      </p>
+
+      <div class="success-actions">
+
+        <a
+          href="services.html"
+          class="success-btn secondary"
+        >
+          Apply Another Service
+        </a>
+
+        <a
+          href="dashboard.html"
+          class="success-btn primary"
+        >
+          Go to Dashboard
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       FIREBASE AUTH / LOGOUT
+  ====================================================== -->
+
+  <script type="module">
+
+    import { auth } from "../js/firebase-config.js";
+
+    import {
+      signOut
+    } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+
+    /* ==========================================
+       LOAD USER
+    ========================================== */
+
+    const storedUser =
+      JSON.parse(
+        localStorage.getItem("svosUser")
+      );
+
+
+    if (storedUser) {
+
+      const userName =
+        document.getElementById("userName");
+
+      const userAvatar =
+        document.getElementById("userAvatar");
+
+
+      userName.textContent =
+        storedUser.name || "Citizen";
+
+
+      const name =
+        storedUser.name || "Citizen";
+
+
+      userAvatar.textContent =
+        name.charAt(0).toUpperCase();
+
+    }
+
+
+    /* ==========================================
+       LOGOUT
+    ========================================== */
+
+    document
+      .getElementById("logoutBtn")
+      .addEventListener(
+        "click",
+        async (event) => {
+
+          event.preventDefault();
+
+
+          try {
+
+            await signOut(auth);
+
+          } catch (error) {
+
+            console.error(
+              "Logout error:",
+              error
+            );
+
+          }
+
+
+          localStorage.removeItem(
+            "svosUser"
+          );
+
+
+          window.location.href =
+            "../login.html";
+
+        }
+      );
+
+  </script>
+
+
+  <!-- =====================================================
+       APPLY SERVICE JS
+  ====================================================== -->
+
+  <script src="js/apply-service.js"></script>
+
+</body>
+</html>

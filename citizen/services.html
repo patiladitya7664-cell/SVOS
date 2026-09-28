@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SVOS - Apply for Services</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+
+  <body>
+    <div class="dashboard-layout">
+      <!-- ================= SIDEBAR ================= -->
+
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <span>🏡</span>
+          SVOS
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="dashboard.html"> 🏠 Dashboard </a>
+
+          <a href="services.html" class="active"> 📝 Apply for Services </a>
+
+          <a href="complaints.html"> 📢 Lodge Complaint </a>
+
+          <a href="track-complaint.html"> 🔍 Track Complaint </a>
+
+          <a href="notices.html"> 📋 Notices </a>
+
+          <a href="schemes.html"> 🎯 Schemes </a>
+
+          <a href="emergency.html"> 🚨 Emergency Contacts </a>
+
+          <a href="profile.html"> 👤 Profile </a>
+
+          <a href="certificate.html"> 📄 Certificates </a>
+
+          <a href="#" id="logoutBtn" class="logout-btn"> 🚪 Logout </a>
+        </nav>
+      </aside>
+
+      <!-- ================= MAIN ================= -->
+
+      <main class="dashboard-main">
+        <header class="topbar">
+          <h1>Apply for Services</h1>
+
+          <div class="user-info">
+            <div>
+              <strong id="userName"> Citizen </strong>
+
+              <small> Citizen </small>
+            </div>
+
+            <div class="user-avatar">C</div>
+          </div>
+        </header>
+
+        <section class="dashboard-content">
+          <!-- ================= WELCOME ================= -->
+
+          <div class="welcome-box">
+            <h2>Village Services 📝</h2>
+
+            <p>
+              Apply for government and Panchayat services online without
+              visiting the office unnecessarily.
+            </p>
+          </div>
+
+          <!-- ================= SERVICES ================= -->
+
+          <div class="dashboard-section">
+            <h3>Available Services</h3>
+
+            <div id="servicesContainer" class="services-grid">
+              <div class="loading-state">
+                <div>Loading services...</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- ================= FIREBASE LOGOUT ================= -->
+
+    <script type="module">
+      import { auth } from "../js/firebase-config.js";
+
+      import { signOut } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+      const storedUser = JSON.parse(localStorage.getItem("svosUser"));
+
+      if (storedUser) {
+        document.getElementById("userName").textContent =
+          storedUser.name || "Citizen";
+      }
+
+      document
+        .getElementById("logoutBtn")
+        .addEventListener("click", async (event) => {
+          event.preventDefault();
+
+          try {
+            await signOut(auth);
+          } catch (error) {
+            console.error("Logout error:", error);
+          }
+
+          localStorage.removeItem("svosUser");
+
+          window.location.href = "../login.html";
+        });
+    </script>
+
+    <script src="js/services.js"></script>
+  </body>
+</html>

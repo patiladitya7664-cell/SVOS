@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SVOS - Manage Complaints</title>
+
+    <!-- Common CSS -->
+      <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/complaint.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <span>🏡</span>
+            SVOS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" ">
+                🏠 Dashboard
+            </a>
+
+            <a href="users.html">
+                👥 Manage Users
+            </a>
+
+            <a href="complaints.html" class="active>
+                📢 Manage Complaints
+            </a>
+
+            <a href="notices.html">
+                📋 Manage Notices
+            </a>
+
+            <a href="schemes.html">
+                🎯 Manage Schemes
+            </a>
+
+            <a href="settings.html">
+                ⚙️ System Settings
+            </a>
+
+            <a href="reports.html">
+                📊 Reports & Analytics
+            </a>
+
+            <a href="#" id="logoutBtn" class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ============================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ============================= -->
+
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <h1>
+                Manage Complaints
+            </h1>
+
+            <div class="user-info">
+
+                <div>
+
+                    <strong id="userName">
+                        Administrator
+                    </strong>
+
+                    <small>
+                        System Administrator
+                    </small>
+
+                </div>
+
+                <div class="user-avatar">
+                    A
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ============================= -->
+        <!-- PAGE CONTENT -->
+        <!-- ============================= -->
+
+        <section class="dashboard-content">
+
+            <!-- PAGE HEADER -->
+
+            <div class="welcome-box">
+
+                <h2>
+                    Citizen Complaints 📢
+                </h2>
+
+                <p>
+                    Review, manage and update citizen complaints.
+                </p>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- SEARCH + FILTER -->
+            <!-- ============================= -->
+
+            <div class="complaint-toolbar">
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="complaintSearch"
+                        placeholder="Search complaints..."
+                    >
+
+                </div>
+
+
+                <div class="filter-box">
+
+                    <select id="complaintStatusFilter">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                        <option value="Under Review">
+                            Under Review
+                        </option>
+
+                        <option value="Resolved">
+                            Resolved
+                        </option>
+
+                        <option value="Rejected">
+                            Rejected
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- COMPLAINTS LIST -->
+            <!-- ============================= -->
+
+            <div
+                id="adminComplaintsContainer"
+                class="complaints-grid"
+            >
+
+                <div class="loading-state">
+
+                    <div>
+                        Loading complaints...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ============================= -->
+<!-- JAVASCRIPT -->
+<!-- ============================= -->
+
+<script src="js/admin.js"></script>
+<script src="js/complaints.js"></script>
+
+</body>
+
+</html>

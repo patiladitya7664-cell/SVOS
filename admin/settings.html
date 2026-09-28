@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SVOS - System Settings</title>
+
+    <!-- Admin CSS -->
+      <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+   <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <span>🏡</span>
+            SVOS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" >
+                🏠 Dashboard
+            </a>
+
+            <a href="users.html">
+                👥 Manage Users
+            </a>
+
+            <a href="complaints.html">
+                📢 Manage Complaints
+            </a>
+
+            <a href="notices.html">
+                📋 Manage Notices
+            </a>
+
+            <a href="schemes.html">
+                🎯 Manage Schemes
+            </a>
+
+            <a href="settings.html" class="active">
+                ⚙️ System Settings
+            </a>
+
+            <a href="reports.html">
+                📊 Reports & Analytics
+            </a>
+
+            <a href="#" id="logoutBtn" class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- ============================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ============================= -->
+
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <h1>
+                System Settings
+            </h1>
+
+            <div class="user-info">
+
+                <div>
+
+                    <strong id="userName">
+                        Administrator
+                    </strong>
+
+                    <small>
+                        System Administrator
+                    </small>
+
+                </div>
+
+                <div class="user-avatar">
+                    A
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ============================= -->
+        <!-- PAGE CONTENT -->
+        <!-- ============================= -->
+
+        <section class="dashboard-content">
+
+            <!-- PAGE HEADER -->
+
+            <div class="welcome-box">
+
+                <h2>
+                    Portal Configuration ⚙️
+                </h2>
+
+                <p>
+                    Manage SVOS portal information,
+                    support details and system configuration.
+                </p>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- SETTINGS FORM -->
+            <!-- ============================= -->
+
+            <div class="settings-card">
+
+                <div class="settings-card-header">
+
+                    <h3>
+                        🏛️ Portal Information
+                    </h3>
+
+                    <p>
+                        Update the basic information displayed
+                        across the SVOS portal.
+                    </p>
+
+                </div>
+
+
+                <form id="settingsForm">
+
+
+                    <!-- PORTAL NAME -->
+
+                    <div class="form-group">
+
+                        <label for="portalName">
+                            Portal Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="portalName"
+                            name="portalName"
+                            placeholder="Enter portal name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- DEPARTMENT NAME -->
+
+                    <div class="form-group">
+
+                        <label for="departmentName">
+                            Department Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="departmentName"
+                            name="departmentName"
+                            placeholder="Enter department name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- SUPPORT EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="supportEmail">
+                            Support Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="supportEmail"
+                            name="supportEmail"
+                            placeholder="Enter support email"
+                        >
+
+                    </div>
+
+
+                    <!-- SUPPORT PHONE -->
+
+                    <div class="form-group">
+
+                        <label for="supportPhone">
+                            Support Phone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="supportPhone"
+                            name="supportPhone"
+                            placeholder="Enter support phone number"
+                        >
+
+                    </div>
+
+
+                    <!-- OFFICE ADDRESS -->
+
+                    <div class="form-group">
+
+                        <label for="officeAddress">
+                            Office Address
+                        </label>
+
+                        <textarea
+                            id="officeAddress"
+                            name="officeAddress"
+                            rows="4"
+                            placeholder="Enter office address"
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- PROCESSING TIME -->
+
+                    <div class="form-group">
+
+                        <label for="processingTime">
+                            Default Processing Time
+                        </label>
+
+                        <input
+                            type="text"
+                            id="processingTime"
+                            name="processingTime"
+                            placeholder="Example: 7 Working Days"
+                        >
+
+                    </div>
+
+
+                    <!-- MAINTENANCE MODE -->
+
+                    <div class="settings-toggle-box">
+
+                        <div>
+
+                            <strong>
+                                Maintenance Mode
+                            </strong>
+
+                            <p>
+                                Temporarily disable citizen
+                                portal access while maintenance
+                                work is in progress.
+                            </p>
+
+                        </div>
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="maintenanceMode"
+                            >
+
+                            <span class="slider"></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- MESSAGE -->
+
+                    <div
+                        id="settingsMessage"
+                        class="settings-message"
+                        style="display: none;"
+                    ></div>
+
+
+                    <!-- ACTIONS -->
+
+                    <div class="settings-actions">
+
+                        <button
+                            type="submit"
+                            id="saveSettingsBtn"
+                            class="primary-btn"
+                        >
+                            💾 Save Settings
+                        </button>
+
+                        <button
+                            type="button"
+                            id="resetSettingsBtn"
+                            class="secondary-btn"
+                        >
+                            ↩️ Reset
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- SYSTEM STATUS -->
+            <!-- ============================= -->
+
+            <div class="settings-card system-status-card">
+
+                <div class="settings-card-header">
+
+                    <h3>
+                        🖥️ System Status
+                    </h3>
+
+                    <p>
+                        Current SVOS system information.
+                    </p>
+
+                </div>
+
+
+                <div class="system-status-list">
+
+                    <div class="system-status-row">
+
+                        <span>
+                            Backend Server
+                        </span>
+
+                        <strong
+                            id="backendStatus"
+                            class="status-online"
+                        >
+                            Checking...
+                        </strong>
+
+                    </div>
+
+
+                    <div class="system-status-row">
+
+                        <span>
+                            Portal Status
+                        </span>
+
+                        <strong
+                            id="portalStatus"
+                            class="status-online"
+                        >
+                            Active
+                        </strong>
+
+                    </div>
+
+
+                    <div class="system-status-row">
+
+                        <span>
+                            Maintenance Mode
+                        </span>
+
+                        <strong
+                            id="maintenanceStatus"
+                        >
+                            Disabled
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ============================= -->
+<!-- JAVASCRIPT -->
+<!-- ============================= -->
+
+<script src="js/admin.js"></script>
+
+<script src="js/settings.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SVOS - Officer Dashboard</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <span>🏡</span>
+            SVOS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="active">
+                🏠 Dashboard
+            </a>
+
+            <a href="citizens.html">
+                👥 Manage Citizens
+            </a>
+
+            <a href="complaints.html">
+                📢 Manage Complaints
+            </a>
+
+            <a href="applications.html">
+                📝 Service Applications
+            </a>
+
+            <a href="notices.html">
+                📋 Notices
+            </a>
+
+            <a href="schemes.html">
+                🎯 Schemes
+            </a>
+
+            <a href="emergency.html">
+                🚨 Emergency Alerts
+            </a>
+
+            <a href="reports.html">
+                📊 Reports & Analytics
+            </a>
+
+            <a href="profile.html">
+                👤 Profile
+            </a>
+
+            <a href="#" id="logoutBtn" class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="dashboard-main">
+
+        <header class="topbar">
+
+            <h1>Officer Dashboard</h1>
+
+            <div class="user-info">
+
+                <div>
+
+                    <strong id="userName">
+                        Officer
+                    </strong>
+
+                    <small>
+                        Panchayat Officer
+                    </small>
+
+                </div>
+
+                <div class="user-avatar">
+                    O
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="dashboard-content">
+
+            <div class="welcome-box">
+
+                <h2>
+                    Welcome, Officer 👋
+                </h2>
+
+                <p>
+                    Manage citizens, complaints and
+                    village service applications.
+                </p>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <h3>0</h3>
+                    <p>Total Citizens</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📢</div>
+                    <h3>0</h3>
+                    <p>Pending Complaints</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📝</div>
+                    <h3>0</h3>
+                    <p>Applications</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <h3>0</h3>
+                    <p>Resolved</p>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-section">
+
+                <h3>Quick Actions</h3>
+
+                <div class="quick-actions">
+
+                    <a href="citizens.html"
+                       class="quick-action">
+
+                        <div class="quick-action-icon">
+                            👥
+                        </div>
+
+                        <h4>Manage Citizens</h4>
+
+                        <p>
+                            View and manage registered citizens.
+                        </p>
+
+                    </a>
+
+
+                    <a href="complaints.html"
+                       class="quick-action">
+
+                        <div class="quick-action-icon">
+                            📢
+                        </div>
+
+                        <h4>Manage Complaints</h4>
+
+                        <p>
+                            Review and update complaint status.
+                        </p>
+
+                    </a>
+
+
+                    <a href="applications.html"
+                       class="quick-action">
+
+                        <div class="quick-action-icon">
+                            📝
+                        </div>
+
+                        <h4>Applications</h4>
+
+                        <p>
+                            Verify, approve or reject applications.
+                        </p>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- Officer Dashboard JavaScript -->
+<script src="../js/dashboard.js"></script>
+
+</body>
+
+</html>

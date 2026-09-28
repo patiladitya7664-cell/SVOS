@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SVOS - Admin Dashboard</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <span>🏡</span>
+            SVOS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" class="active">
+                🏠 Dashboard
+            </a>
+
+            <a href="users.html">
+                👥 Manage Users
+            </a>
+
+            <a href="complaints.html">
+                📢 Manage Complaints
+            </a>
+
+            <a href="notices.html">
+                📋 Manage Notices
+            </a>
+
+            <a href="schemes.html">
+                🎯 Manage Schemes
+            </a>
+
+            <a href="settings.html">
+                ⚙️ System Settings
+            </a>
+
+            <a href="reports.html">
+                📊 Reports & Analytics
+            </a>
+
+            <a href="#" id="logoutBtn" class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="dashboard-main">
+
+        <header class="topbar">
+
+            <h1>Admin Dashboard</h1>
+
+            <div class="user-info">
+
+                <div>
+
+                    <strong id="userName">
+                        Administrator
+                    </strong>
+
+                    <small>
+                        System Administrator
+                    </small>
+
+                </div>
+
+                <div class="user-avatar">
+                    A
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="dashboard-content">
+
+            <div class="welcome-box">
+
+                <h2>
+                    Welcome, Administrator 👋
+                </h2>
+
+                <p>
+                    Manage users, complaints and
+                    the SVOS platform.
+                </p>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <h3>0</h3>
+                    <p>Total Users</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📢</div>
+                    <h3>0</h3>
+                    <p>Complaints</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📋</div>
+                    <h3>0</h3>
+                    <p>Notices</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <h3>0</h3>
+                    <p>Schemes</p>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-section">
+
+                <h3>Administration</h3>
+
+                <div class="quick-actions">
+
+                    <a href="users.html"
+                       class="quick-action">
+
+                        <div class="quick-action-icon">
+                            👥
+                        </div>
+
+                        <h4>Manage Users</h4>
+
+                        <p>
+                            Manage citizens, officers and administrators.
+                        </p>
+
+                    </a>
+
+
+                    <a href="complaints.html"
+                       class="quick-action">
+
+                        <div class="quick-action-icon">
+                            📢
+                        </div>
+
+                        <h4>Complaints</h4>
+
+                        <p>
+                            Monitor complaints across the system.
+                        </p>
+
+                    </a>
+
+
+                    <a href="reports.html"
+                       class="quick-action">
+
+                        <div class="quick-action-icon">
+                            📊
+                        </div>
+
+                        <h4>Reports</h4>
+
+                        <p>
+                            View system reports and analytics.
+                        </p>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script type="module">
+
+    import {
+        auth
+    } from "../js/firebase-config.js";
+
+    import {
+        signOut
+    } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+
+    const storedUser =
+        JSON.parse(localStorage.getItem("svosUser"));
+
+
+    if (storedUser) {
+
+        document.getElementById("userName")
+            .textContent = storedUser.name;
+
+    }
+
+
+    document
+        .getElementById("logoutBtn")
+        .addEventListener("click", async (event) => {
+
+            event.preventDefault();
+
+            await signOut(auth);
+
+            localStorage.removeItem("svosUser");
+
+            window.location.href =
+                "../login.html";
+
+        });
+
+</script>
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

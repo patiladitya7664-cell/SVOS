@@ -1,0 +1,814 @@
+/* =========================================================
+   SVOS - APPLY SERVICE PAGE
+   File: user/css/apply-service.css
+========================================================= */
+
+
+/* =========================================================
+   PAGE INTRO
+========================================================= */
+
+.apply-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.apply-intro h2 {
+  margin: 0 0 8px;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.apply-intro p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.back-services-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 11px 18px;
+  border-radius: 9px;
+  text-decoration: none;
+  background: #ffffff;
+  color: #166534;
+  border: 1px solid #dbe7df;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.back-services-btn:hover {
+  background: #f0fdf4;
+  border-color: #86efac;
+}
+
+
+/* =========================================================
+   APPLICATION GRID
+========================================================= */
+
+.application-page-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(500px, 1.5fr);
+  gap: 24px;
+  align-items: start;
+}
+
+
+/* =========================================================
+   APPLICATION CARD
+========================================================= */
+
+.application-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+}
+
+.application-card:hover {
+  box-shadow: 0 7px 25px rgba(15, 23, 42, 0.07);
+}
+
+
+/* =========================================================
+   CARD HEADING
+========================================================= */
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding-bottom: 20px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.heading-icon {
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #ecfdf5;
+  font-size: 21px;
+}
+
+.card-heading h2 {
+  margin: 0 0 4px;
+  color: #172b1b;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.card-heading p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   SELECTED SERVICE
+========================================================= */
+
+.selected-service {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 18px;
+  border-radius: 12px;
+  background: #f7fcf8;
+  border: 1px solid #dcefe1;
+}
+
+.selected-service-icon {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: #dcfce7;
+  font-size: 27px;
+}
+
+.selected-service h3 {
+  margin: 2px 0 7px;
+  color: #14532d;
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.selected-service p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   DOCUMENTS
+========================================================= */
+
+.documents-section {
+  margin-top: 25px;
+}
+
+.documents-section h3 {
+  margin: 0 0 13px;
+  color: #334155;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.documents-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.documents-section li {
+  position: relative;
+  margin-bottom: 9px;
+  padding: 10px 12px 10px 35px;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.documents-section li::before {
+  content: "✓";
+  position: absolute;
+  left: 12px;
+  top: 9px;
+  color: #15803d;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   INFO BOX
+========================================================= */
+
+.info-box {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 14px;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  background: #eff6ff;
+}
+
+.info-box > span {
+  flex-shrink: 0;
+  font-size: 16px;
+}
+
+.info-box p {
+  margin: 0;
+  color: #475569;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+#serviceApplicationForm {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 19px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.form-group label span {
+  color: #dc2626;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 13px;
+  border: 1px solid #d8dee7;
+  border-radius: 8px;
+  outline: none;
+  background: #ffffff;
+  color: #1e293b;
+  font-family: inherit;
+  font-size: 14px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.form-group input {
+  height: 44px;
+}
+
+.form-group textarea {
+  min-height: 105px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.10);
+}
+
+.form-group input:read-only {
+  background: #f8fafc;
+  color: #475569;
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+
+/* =========================================================
+   FORM SECTION TITLE
+========================================================= */
+
+.form-section-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 27px 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #edf1f5;
+}
+
+.form-section-title span {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  background: #f0fdf4;
+  font-size: 15px;
+}
+
+.form-section-title h3 {
+  margin: 0;
+  color: #334155;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FIELD HELP
+========================================================= */
+
+.field-help {
+  display: block;
+  margin-top: 6px;
+  color: #94a3b8;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   FIELD ERROR
+========================================================= */
+
+.field-error {
+  display: block;
+  min-height: 15px;
+  margin-top: 5px;
+  color: #dc2626;
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   DECLARATION
+========================================================= */
+
+.declaration-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 23px 0 18px;
+  padding: 14px;
+  border-radius: 9px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.declaration-box input {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: #16a34a;
+  cursor: pointer;
+}
+
+.declaration-box label {
+  color: #475569;
+  font-size: 12px;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   APPLICATION MESSAGE
+========================================================= */
+
+.application-message {
+  display: none;
+  margin: 15px 0;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.application-message.show {
+  display: block;
+}
+
+.application-message.error {
+  display: block;
+  color: #991b1b;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+.application-message.success {
+  display: block;
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+
+.application-message.info {
+  display: block;
+  color: #1e40af;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+========================================================= */
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 11px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #edf1f5;
+}
+
+.cancel-btn,
+.submit-btn {
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 19px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.cancel-btn {
+  background: #ffffff;
+  color: #475569;
+  border: 1px solid #d8dee7;
+}
+
+.cancel-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.submit-btn {
+  border: 1px solid #15803d;
+  background: #15803d;
+  color: #ffffff;
+}
+
+.submit-btn:hover {
+  background: #166534;
+  border-color: #166534;
+  transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* =========================================================
+   SUCCESS MODAL
+========================================================= */
+
+.success-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.success-modal.hidden {
+  display: none;
+}
+
+.success-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(3px);
+}
+
+.success-modal-box {
+  position: relative;
+  z-index: 2;
+  width: min(470px, 100%);
+  padding: 32px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.22);
+  text-align: center;
+}
+
+.success-icon {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.success-modal-box h2 {
+  margin: 0 0 10px;
+  color: #14532d;
+  font-size: 22px;
+}
+
+.success-modal-box > p {
+  margin: 0 auto;
+  max-width: 390px;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.application-id-box {
+  margin: 22px 0;
+  padding: 16px;
+  border: 1px dashed #86efac;
+  border-radius: 10px;
+  background: #f0fdf4;
+}
+
+.application-id-box span {
+  display: block;
+  margin-bottom: 7px;
+  color: #64748b;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.application-id-box strong {
+  display: block;
+  color: #166534;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  word-break: break-word;
+}
+
+.success-note {
+  margin-bottom: 22px !important;
+}
+
+.success-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.success-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.success-btn.primary {
+  background: #15803d;
+  color: #ffffff;
+  border: 1px solid #15803d;
+}
+
+.success-btn.primary:hover {
+  background: #166534;
+}
+
+.success-btn.secondary {
+  background: #ffffff;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.success-btn.secondary:hover {
+  background: #f0fdf4;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.mobile-menu-btn {
+  display: none;
+  width: 38px;
+  height: 38px;
+  border: 1px solid #dbe3dc;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #166534;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .application-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-summary-card {
+    order: 2;
+  }
+
+  .application-page-grid > .application-card:last-child {
+    order: 1;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .apply-intro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .back-services-btn {
+    width: 100%;
+  }
+
+  .application-card {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .cancel-btn,
+  .submit-btn {
+    width: 100%;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+  .apply-intro h2 {
+    font-size: 21px;
+  }
+
+  .apply-intro p {
+    font-size: 13px;
+  }
+
+  .application-card {
+    padding: 16px;
+  }
+
+  .card-heading {
+    gap: 10px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+  }
+
+  .heading-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+  .card-heading h2 {
+    font-size: 17px;
+  }
+
+  .selected-service {
+    padding: 14px;
+  }
+
+  .selected-service-icon {
+    width: 46px;
+    height: 46px;
+    font-size: 22px;
+  }
+
+  .selected-service h3 {
+    font-size: 15px;
+  }
+
+  .form-section-title {
+    margin-top: 22px;
+  }
+
+  .success-modal-box {
+    padding: 25px 18px;
+  }
+
+  .success-modal-box h2 {
+    font-size: 19px;
+  }
+
+  .application-id-box strong {
+    font-size: 17px;
+  }
+
+  .success-actions {
+    flex-direction: column;
+  }
+
+  .success-btn {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .application-card {
+    padding: 14px;
+  }
+
+  .selected-service {
+    flex-direction: column;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 13px;
+  }
+
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SVOS - Manage Notices</title>
+
+    <!-- Admin CSS -->
+      <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <span>🏡</span>
+            SVOS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" >
+                🏠 Dashboard
+            </a>
+
+            <a href="users.html">
+                👥 Manage Users
+            </a>
+
+            <a href="complaints.html">
+                📢 Manage Complaints
+            </a>
+
+            <a href="notices.html"  class="active">
+                📋 Manage Notices
+            </a>
+
+            <a href="schemes.html">
+                🎯 Manage Schemes
+            </a>
+
+            <a href="settings.html">
+                ⚙️ System Settings
+            </a>
+
+            <a href="reports.html">
+                📊 Reports & Analytics
+            </a>
+
+            <a href="#" id="logoutBtn" class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ============================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ============================= -->
+
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <h1>
+                Manage Notices
+            </h1>
+
+            <div class="user-info">
+
+                <div>
+
+                    <strong id="userName">
+                        Administrator
+                    </strong>
+
+                    <small>
+                        System Administrator
+                    </small>
+
+                </div>
+
+                <div class="user-avatar">
+                    A
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ============================= -->
+        <!-- PAGE CONTENT -->
+        <!-- ============================= -->
+
+        <section class="dashboard-content">
+
+            <!-- PAGE HEADER -->
+
+            <div class="welcome-box">
+
+                <h2>
+                    Notices & Announcements 📋
+                </h2>
+
+                <p>
+                    Manage important notices and announcements
+                    for citizens.
+                </p>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- SEARCH + ACTION -->
+            <!-- ============================= -->
+
+            <div class="notice-toolbar">
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="noticeSearch"
+                        placeholder="Search notices..."
+                    >
+
+                </div>
+
+                <button
+                    type="button"
+                    id="addNoticeBtn"
+                    class="primary-btn"
+                >
+                    ➕ Add Notice
+                </button>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- NOTICES -->
+            <!-- ============================= -->
+
+            <div
+                id="noticesContainer"
+                class="notices-grid"
+            >
+
+                <div class="loading-state">
+
+                    <div>
+                        Loading notices...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ============================= -->
+<!-- JAVASCRIPT -->
+<!-- ============================= -->
+
+<script src="js/admin.js"></script>
+<script src="js/notices.js"></script>
+
+</body>
+
+</html>

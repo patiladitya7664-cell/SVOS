@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SVOS - Citizens</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <span>🏡</span>
+            SVOS
+
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" >
+                🏠 Dashboard
+            </a>
+
+            <a href="citizens.html" class="active">
+                👥 Manage Citizens
+            </a>
+
+            <a href="complaints.html">
+                📢 Manage Complaints
+            </a>
+
+            <a href="applications.html">
+                📝 Service Applications
+            </a>
+
+            <a href="notices.html">
+                📋 Notices
+            </a>
+
+            <a href="schemes.html">
+                🎯 Schemes
+            </a>
+
+            <a href="emergency.html">
+                🚨 Emergency Alerts
+            </a>
+
+            <a href="reports.html">
+                📊 Reports & Analytics
+            </a>
+
+            <a href="profile.html">
+                👤 Profile
+            </a>
+
+            <a href="#" id="logoutBtn" class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="dashboard-main">
+
+        <header class="topbar">
+
+            <h1>
+                Citizens
+            </h1>
+
+            <div class="user-info">
+
+                <div>
+
+                    <strong id="userName">
+                        Panchayat Officer
+                    </strong>
+
+                    <small>
+                        Panchayat Officer
+                    </small>
+
+                </div>
+
+                <div class="user-avatar">
+                    O
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="dashboard-content">
+
+            <!-- ================= WELCOME ================= -->
+
+            <div class="welcome-box">
+
+                <h2>
+                    Citizen Management 👥
+                </h2>
+
+                <p>
+                    View registered citizens and
+                    their basic information.
+                </p>
+
+            </div>
+
+
+            <!-- ================= CITIZEN STATS ================= -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👥
+                    </div>
+
+                    <h3 id="totalCitizens">
+                        0
+                    </h3>
+
+                    <p>
+                        Total Citizens
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🟢
+                    </div>
+
+                    <h3 id="activeCitizens">
+                        0
+                    </h3>
+
+                    <p>
+                        Active Citizens
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📝
+                    </div>
+
+                    <h3 id="applicationCitizens">
+                        0
+                    </h3>
+
+                    <p>
+                        With Applications
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📢
+                    </div>
+
+                    <h3 id="complaintCitizens">
+                        0
+                    </h3>
+
+                    <p>
+                        With Complaints
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= CITIZENS ================= -->
+
+            <div class="dashboard-section">
+
+                <div class="section-header">
+
+                    <h3>
+                        Registered Citizens
+                    </h3>
+
+                    <button
+                        type="button"
+                        id="refreshCitizensBtn"
+                        class="secondary-btn"
+                    >
+                        🔄 Refresh
+                    </button>
+
+                </div>
+
+
+                <!-- ================= SEARCH ================= -->
+
+                <div class="citizen-search">
+
+                    <label for="citizenSearch">
+                        Search Citizen
+                    </label>
+
+                    <input
+                        type="text"
+                        id="citizenSearch"
+                        placeholder="Search by name, email or mobile..."
+                    >
+
+                </div>
+
+
+                <!-- ================= CITIZENS CONTAINER ================= -->
+
+                <div
+                    id="citizensContainer"
+                    class="citizens-grid"
+                >
+
+                    <div class="loading-state">
+
+                        <div>
+                            Loading citizens...
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= FIREBASE LOGOUT ================= -->
+
+<script type="module">
+
+    import {
+        auth
+    } from "../js/firebase-config.js";
+
+    import {
+        signOut
+    } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+
+    const storedUser =
+        JSON.parse(
+            localStorage.getItem("svosUser")
+        );
+
+
+    if (storedUser) {
+
+        const userName =
+            document.getElementById(
+                "userName"
+            );
+
+        if (userName) {
+
+            userName.textContent =
+                storedUser.name ||
+                "Panchayat Officer";
+
+        }
+
+    }
+
+
+    const logoutBtn =
+        document.getElementById(
+            "logoutBtn"
+        );
+
+
+    if (logoutBtn) {
+
+        logoutBtn.addEventListener(
+            "click",
+            async function (event) {
+
+                event.preventDefault();
+
+                try {
+
+                    await signOut(auth);
+
+                } catch (error) {
+
+                    console.error(
+                        "Logout error:",
+                        error
+                    );
+
+                }
+
+                localStorage.removeItem(
+                    "svosUser"
+                );
+
+                window.location.href =
+                    "../login.html";
+
+            }
+        );
+
+    }
+
+</script>
+
+
+<script src="js/officer-citizens.js"></script>
+
+</body>
+
+</html>

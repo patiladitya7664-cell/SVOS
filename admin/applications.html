@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Applications | SVOS Admin</title>
+     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="css/admin.css">
+     <link rel="stylesheet" href="css/applications.css">
+
+
+    
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <span>🏡</span>
+            SVOS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" ">
+                🏠 Dashboard
+            </a>
+
+            <a href="users.html">
+                👥 Manage Users
+            </a>
+
+            <a href="complaints.html" class="active>
+                📢 Manage Complaints
+            </a>
+
+            <a href="notices.html">
+                📋 Manage Notices
+            </a>
+
+            <a href="schemes.html">
+                🎯 Manage Schemes
+            </a>
+
+            <a href="settings.html">
+                ⚙️ System Settings
+            </a>
+
+            <a href="reports.html">
+                📊 Reports & Analytics
+            </a>
+
+            <a href="#" id="logoutBtn" class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="main-content">
+
+        <div class="applications-page">
+
+
+            <!-- HEADER -->
+
+            <div class="page-header">
+
+                <div>
+
+                    <h1>
+                        Applications
+                    </h1>
+
+                    <p>
+                        Manage citizen service applications
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="refreshApplicationsBtn"
+                    class="refresh-btn"
+                >
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="application-stats">
+
+                <div class="application-stat-card">
+
+                    <span>
+                        Total Applications
+                    </span>
+
+                    <strong id="totalApplications">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="application-stat-card">
+
+                    <span>
+                        Pending
+                    </span>
+
+                    <strong id="pendingApplications">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="application-stat-card">
+
+                    <span>
+                        Under Review
+                    </span>
+
+                    <strong id="reviewApplications">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="application-stat-card">
+
+                    <span>
+                        Approved
+                    </span>
+
+                    <strong id="approvedApplications">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- FILTERS -->
+
+            <div class="application-filters">
+
+                <select id="applicationStatus">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="pending">
+                        Pending
+                    </option>
+
+                    <option value="under-review">
+                        Under Review
+                    </option>
+
+                    <option value="approved">
+                        Approved
+                    </option>
+
+                    <option value="rejected">
+                        Rejected
+                    </option>
+
+                    <option value="completed">
+                        Completed
+                    </option>
+
+                </select>
+
+
+                <select id="applicationService">
+
+                    <option value="all">
+                        All Services
+                    </option>
+
+                </select>
+
+
+                <input
+                    type="search"
+                    id="applicationSearch"
+                    placeholder="Search application, citizen, email..."
+                >
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="applicationMessage"
+                class="application-message"
+            ></div>
+
+
+            <!-- LOADING -->
+
+            <div id="applicationsLoading">
+
+                Loading applications...
+
+            </div>
+
+
+            <!-- EMPTY -->
+
+            <div id="applicationsEmpty">
+
+                <h3>
+                    No Applications Found
+                </h3>
+
+                <p>
+                    There are no applications matching your filters.
+                </p>
+
+            </div>
+
+
+            <!-- APPLICATIONS -->
+
+            <div
+                id="applicationsContainer"
+                class="applications-container"
+            ></div>
+
+
+        </div>
+
+    </main>
+
+
+    <script src="js/applications.js"></script>
+
+</body>
+</html>

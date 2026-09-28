@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SVOS - Government Schemes</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <span>🏡</span>
+            SVOS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" >
+                🏠 Dashboard
+            </a>
+
+            <a href="citizens.html">
+                👥 Manage Citizens
+            </a>
+
+            <a href="complaints.html">
+                📢 Manage Complaints
+            </a>
+
+            <a href="applications.html">
+                📝 Service Applications
+            </a>
+
+            <a href="notices.html">
+                📋 Notices
+            </a>
+
+            <a href="schemes.html" class="active">
+                🎯 Schemes
+            </a>
+
+            <a href="emergency.html">
+                🚨 Emergency Alerts
+            </a>
+
+            <a href="reports.html">
+                📊 Reports & Analytics
+            </a>
+
+            <a href="profile.html">
+                👤 Profile
+            </a>
+
+            <a href="#" id="logoutBtn" class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <h1>Government Schemes</h1>
+
+            <div class="user-info">
+
+                <div>
+
+                    <strong id="userName">
+                        Panchayat Officer
+                    </strong>
+
+                    <small>
+                        Panchayat Officer
+                    </small>
+
+                </div>
+
+                <div class="user-avatar">
+                    O
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="dashboard-content">
+
+
+            <!-- WELCOME -->
+
+            <div class="welcome-box">
+
+                <h2>
+                    Government Schemes 🎯
+                </h2>
+
+                <p>
+                    Manage and view government schemes
+                    available for Panchayat citizens.
+                </p>
+
+            </div>
+
+
+            <!-- ================= STATS ================= -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🎯
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Schemes
+                        </span>
+
+                        <strong id="totalSchemes">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🌾
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Agriculture
+                        </span>
+
+                        <strong id="agricultureSchemes">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👨‍👩‍👧
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Social Welfare
+                        </span>
+
+                        <strong id="socialSchemes">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🎓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Education
+                        </span>
+
+                        <strong id="educationSchemes">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= SCHEMES SECTION ================= -->
+
+            <div class="dashboard-section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h3>
+                            Available Government Schemes
+                        </h3>
+
+                        <p>
+                            Government schemes and citizen
+                            eligibility information.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="refreshSchemesBtn"
+                        class="secondary-btn"
+                    >
+                        🔄 Refresh
+                    </button>
+
+                </div>
+
+
+                <!-- FILTERS -->
+
+                <div class="scheme-filters">
+
+                    <div class="filter-group">
+
+                        <label for="schemeCategory">
+                            Category
+                        </label>
+
+                        <select id="schemeCategory">
+
+                            <option value="all">
+                                All Categories
+                            </option>
+
+                            <option value="agriculture">
+                                Agriculture
+                            </option>
+
+                            <option value="social">
+                                Social Welfare
+                            </option>
+
+                            <option value="education">
+                                Education
+                            </option>
+
+                            <option value="health">
+                                Health
+                            </option>
+
+                            <option value="employment">
+                                Employment
+                            </option>
+
+                            <option value="housing">
+                                Housing
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="schemeSearch">
+                            Search
+                        </label>
+
+                        <input
+                            type="search"
+                            id="schemeSearch"
+                            placeholder="Search schemes..."
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <div
+                    id="schemesMessage"
+                    class="form-message"
+                    style="display: none;"
+                ></div>
+
+
+                <!-- LOADING -->
+
+                <div
+                    id="schemesLoading"
+                    class="loading-state"
+                >
+                    Loading schemes...
+                </div>
+
+
+                <!-- SCHEMES -->
+
+                <div
+                    id="schemesContainer"
+                    class="schemes-grid"
+                    style="display: none;"
+                ></div>
+
+
+                <!-- EMPTY -->
+
+                <div
+                    id="schemesEmpty"
+                    class="empty-state"
+                    style="display: none;"
+                >
+                    No schemes found.
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= FIREBASE LOGOUT ================= -->
+
+<script type="module">
+
+    import { auth }
+        from "../js/firebase-config.js";
+
+    import { signOut }
+        from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+
+    const storedUser =
+        JSON.parse(
+            localStorage.getItem("svosUser")
+        );
+
+
+    if (storedUser) {
+
+        const userName =
+            document.getElementById("userName");
+
+        if (userName) {
+
+            userName.textContent =
+                storedUser.name ||
+                "Panchayat Officer";
+
+        }
+
+    }
+
+
+    const logoutBtn =
+        document.getElementById("logoutBtn");
+
+
+    if (logoutBtn) {
+
+        logoutBtn.addEventListener(
+            "click",
+            async function (event) {
+
+                event.preventDefault();
+
+                try {
+
+                    await signOut(auth);
+
+                } catch (error) {
+
+                    console.error(
+                        "Logout error:",
+                        error
+                    );
+
+                }
+
+                localStorage.removeItem(
+                    "svosUser"
+                );
+
+                window.location.href =
+                    "../login.html";
+
+            }
+        );
+
+    }
+
+</script>
+
+
+<script src="js/officer-schemes.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SVOS - My Profile</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+
+  <body>
+    <div class="dashboard-layout">
+      <!-- ================= SIDEBAR ================= -->
+
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <span>🏡</span>
+          SVOS
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="dashboard.html"> 🏠 Dashboard </a>
+
+          <a href="services.html"> 📝 Apply for Services </a>
+
+          <a href="complaints.html"> 📢 Lodge Complaint </a>
+
+          <a href="track-complaint.html"> 🔍 Track Complaint </a>
+
+          <a href="notices.html"> 📋 Notices </a>
+
+          <a href="schemes.html"> 🎯 Schemes </a>
+
+          <a href="emergency.html"> 🚨 Emergency Contacts </a>
+
+          <a href="profile.html" class="active"> 👤 Profile </a>
+
+          <a href="certificate.html"> 📄 Certificates </a>
+
+          <a href="#" id="logoutBtn" class="logout-btn"> 🚪 Logout </a>
+        </nav>
+      </aside>
+
+      <!-- ================= MAIN ================= -->
+
+      <main class="dashboard-main">
+        <header class="topbar">
+          <h1>My Profile</h1>
+
+          <div class="user-info">
+            <div>
+              <strong id="userName"> Citizen </strong>
+
+              <small> Citizen </small>
+            </div>
+
+            <div class="user-avatar">C</div>
+          </div>
+        </header>
+
+        <section class="dashboard-content">
+          <!-- ================= WELCOME ================= -->
+
+          <div class="welcome-box">
+            <h2>My Profile 👤</h2>
+
+            <p>
+              View and update your personal information registered with SVOS.
+            </p>
+          </div>
+
+          <!-- ================= PROFILE ================= -->
+
+          <div class="dashboard-section">
+            <h3>Personal Information</h3>
+
+            <div class="profile-card">
+              <div id="profileMessage" class="form-message"></div>
+
+              <form id="profileForm">
+                <!-- NAME -->
+
+                <div class="profile-form-grid">
+                  <div class="form-group">
+                    <label for="profileName"> Full Name </label>
+
+                    <input
+                      type="text"
+                      id="profileName"
+                      name="name"
+                      placeholder="Enter your full name"
+                      required
+                    />
+                  </div>
+
+                  <!-- EMAIL -->
+
+                  <div class="form-group">
+                    <label for="profileEmail"> Email Address </label>
+
+                    <input
+                      type="email"
+                      id="profileEmail"
+                      name="email"
+                      placeholder="Enter your email"
+                      readonly
+                    />
+                  </div>
+
+                  <!-- MOBILE -->
+
+                  <div class="form-group">
+                    <label for="profileMobile"> Mobile Number </label>
+
+                    <input
+                      type="tel"
+                      id="profileMobile"
+                      name="mobile"
+                      placeholder="Enter your mobile number"
+                    />
+                  </div>
+
+                  <!-- VILLAGE -->
+
+                  <div class="form-group">
+                    <label for="profileVillage"> Village </label>
+
+                    <input
+                      type="text"
+                      id="profileVillage"
+                      name="village"
+                      placeholder="Enter your village"
+                    />
+                  </div>
+
+                  <!-- TALUKA -->
+
+                  <div class="form-group">
+                    <label for="profileTaluka"> Taluka </label>
+
+                    <input
+                      type="text"
+                      id="profileTaluka"
+                      name="taluka"
+                      placeholder="Enter your taluka"
+                    />
+                  </div>
+
+                  <!-- DISTRICT -->
+
+                  <div class="form-group">
+                    <label for="profileDistrict"> District </label>
+
+                    <input
+                      type="text"
+                      id="profileDistrict"
+                      name="district"
+                      placeholder="Enter your district"
+                    />
+                  </div>
+                </div>
+
+                <!-- ADDRESS -->
+
+                <div class="form-group">
+                  <label for="profileAddress"> Address </label>
+
+                  <textarea
+                    id="profileAddress"
+                    name="address"
+                    rows="4"
+                    placeholder="Enter your complete address"
+                  ></textarea>
+                </div>
+
+                <!-- ACTIONS -->
+
+                <div class="profile-actions">
+                  <button
+                    type="reset"
+                    class="secondary-btn"
+                    id="resetProfileBtn"
+                  >
+                    Reset
+                  </button>
+
+                  <button type="submit" class="primary-btn" id="saveProfileBtn">
+                    Save Changes
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- ================= ACCOUNT INFO ================= -->
+
+          <div class="dashboard-section">
+            <h3>Account Information</h3>
+
+            <div class="account-info-card">
+              <div class="account-info-item">
+                <span> Account Type </span>
+
+                <strong> Citizen </strong>
+              </div>
+
+              <div class="account-info-item">
+                <span> Account Status </span>
+
+                <strong class="status-active"> Active </strong>
+              </div>
+
+              <div class="account-info-item">
+                <span> Email Verification </span>
+
+                <strong class="status-verified"> Verified </strong>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- ================= FIREBASE LOGOUT ================= -->
+
+    <script type="module">
+      import { auth } from "../js/firebase-config.js";
+
+      import { signOut } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+      const storedUser = JSON.parse(localStorage.getItem("svosUser"));
+
+      if (storedUser) {
+        document.getElementById("userName").textContent =
+          storedUser.name || "Citizen";
+      }
+
+      document
+        .getElementById("logoutBtn")
+        .addEventListener("click", async (event) => {
+          event.preventDefault();
+
+          try {
+            await signOut(auth);
+          } catch (error) {
+            console.error("Logout error:", error);
+          }
+
+          localStorage.removeItem("svosUser");
+
+          window.location.href = "../login.html";
+        });
+    </script>
+
+    <script src="js/profile.js"></script>
+  </body>
+</html>

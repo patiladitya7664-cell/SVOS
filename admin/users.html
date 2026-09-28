@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SVOS - Manage Users</title>
+     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ============================= -->
+    <!-- SIDEBAR -->
+    <!-- ============================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <span>🏡</span>
+            SVOS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+                🏠 Dashboard
+            </a>
+
+            <a href="users.html"  class="active">
+                👥 Manage Users
+            </a>
+
+            <a href="complaints.html">
+                📢 Manage Complaints
+            </a>
+
+            <a href="notices.html">
+                📋 Manage Notices
+            </a>
+
+            <a href="schemes.html">
+                🎯 Manage Schemes
+            </a>
+
+            <a href="settings.html">
+                ⚙️ System Settings
+            </a>
+
+            <a href="reports.html">
+                📊 Reports & Analytics
+            </a>
+
+            <a href="#" id="logoutBtn" class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ============================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ============================= -->
+
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <h1>
+                Manage Users
+            </h1>
+
+            <div class="user-info">
+
+                <div>
+
+                    <strong id="userName">
+                        Administrator
+                    </strong>
+
+                    <small>
+                        System Administrator
+                    </small>
+
+                </div>
+
+                <div class="user-avatar">
+                    A
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ============================= -->
+        <!-- PAGE CONTENT -->
+        <!-- ============================= -->
+
+        <section class="dashboard-content">
+
+            <div class="welcome-box">
+
+                <h2>
+                    Citizen Management 👥
+                </h2>
+
+                <p>
+                    View, search and manage registered
+                    citizens on the SVOS portal.
+                </p>
+
+            </div>
+
+
+            <!-- SEARCH + FILTER -->
+
+            <div class="user-toolbar">
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="userSearch"
+                        placeholder="Search users by name, email or mobile..."
+                    >
+
+                </div>
+
+
+                <div class="filter-box">
+
+                    <select id="userStatusFilter">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="Active">
+                            Active
+                        </option>
+
+                        <option value="Inactive">
+                            Inactive
+                        </option>
+
+                        <option value="Blocked">
+                            Blocked
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="filter-box">
+
+                    <select id="userRoleFilter">
+
+                        <option value="all">
+                            All Roles
+                        </option>
+
+                        <option value="Citizen">
+                            Citizen
+                        </option>
+
+                        <option value="Admin">
+                            Admin
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- USERS -->
+
+            <div
+                id="usersContainer"
+                class="users-grid"
+            >
+
+                <div class="loading-state">
+
+                    <div>
+                        Loading users...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="js/admin.js"></script>
+
+<script src="js/users.js"></script>
+
+</body>
+
+</html>

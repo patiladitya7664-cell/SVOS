@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SVOS - Lodge Complaint</title>
+
+
+    <!-- ================= CSS ================= -->
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="dashboard-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <span>🏡</span>
+
+            SVOS
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html">
+                🏠 Dashboard
+            </a>
+
+
+            <a href="services.html">
+                📝 Apply for Services
+            </a>
+
+
+            <a
+                href="complaints.html"
+                class="active"
+            >
+                📢 Lodge Complaint
+            </a>
+
+
+            <a href="track-complaint.html">
+                🔍 Track Complaint
+            </a>
+
+
+            <a href="notices.html">
+                📋 Notices
+            </a>
+
+
+            <a href="schemes.html">
+                🎯 Schemes
+            </a>
+
+
+            <a href="emergency.html">
+                🚨 Emergency Contacts
+            </a>
+
+
+            <a href="profile.html">
+                👤 Profile
+            </a>
+
+
+            <a href="certificate.html">
+                📄 Certificates
+            </a>
+
+
+            <a
+                href="#"
+                id="logoutBtn"
+                class="logout-btn"
+            >
+                🚪 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- =================================================
+             TOPBAR
+             ================================================= -->
+
+        <header class="topbar">
+
+            <h1>
+                Lodge Complaint
+            </h1>
+
+
+            <div class="user-info">
+
+                <div>
+
+                    <strong id="userName">
+                        Citizen
+                    </strong>
+
+                    <small>
+                        Citizen
+                    </small>
+
+                </div>
+
+
+                <div class="user-avatar">
+                    C
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             CONTENT
+             ================================================= -->
+
+        <section class="dashboard-content">
+
+
+            <!-- =================================================
+                 WELCOME
+                 ================================================= -->
+
+            <div class="welcome-box">
+
+                <h2>
+                    Submit Your Complaint 📢
+                </h2>
+
+
+                <p>
+                    Report an issue or problem related
+                    to your village services.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 COMPLAINT FORM
+                 ================================================= -->
+
+            <div class="dashboard-section">
+
+                <h3>
+                    Complaint Details
+                </h3>
+
+
+                <form
+                    id="complaintForm"
+                    class="complaint-form"
+                >
+
+
+                    <!-- CATEGORY -->
+
+                    <div class="form-group">
+
+                        <label for="complaintCategory">
+                            Complaint Category
+                        </label>
+
+
+                        <select
+                            id="complaintCategory"
+                            name="category"
+                            required
+                        >
+
+                            <option value="">
+                                Select complaint category
+                            </option>
+
+                            <option value="Water Supply">
+                                Water Supply
+                            </option>
+
+                            <option value="Electricity">
+                                Electricity
+                            </option>
+
+                            <option value="Road">
+                                Road
+                            </option>
+
+                            <option value="Sanitation">
+                                Sanitation
+                            </option>
+
+                            <option value="Street Light">
+                                Street Light
+                            </option>
+
+                            <option value="Garbage">
+                                Garbage
+                            </option>
+
+                            <option value="Drainage">
+                                Drainage
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- SUBJECT -->
+
+                    <div class="form-group">
+
+                        <label for="complaintSubject">
+                            Complaint Subject
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="complaintSubject"
+                            name="subject"
+                            placeholder="Enter complaint subject"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- LOCATION -->
+
+                    <div class="form-group">
+
+                        <label for="complaintLocation">
+                            Location
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="complaintLocation"
+                            name="location"
+                            placeholder="Enter location of the issue"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- DESCRIPTION -->
+
+                    <div class="form-group">
+
+                        <label for="complaintDescription">
+                            Complaint Description
+                        </label>
+
+
+                        <textarea
+                            id="complaintDescription"
+                            name="description"
+                            rows="6"
+                            placeholder="Describe your complaint in detail..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         MESSAGE
+                         ================================================= -->
+
+                    <div
+                        id="complaintMessage"
+                        class="form-message"
+                        style="display:none;"
+                    ></div>
+
+
+
+                    <!-- =================================================
+                         COMPLAINT ID RESULT
+                         ================================================= -->
+
+                    <div
+                        id="complaintIdBox"
+                        class="complaint-id-box"
+                        style="display:none;"
+                    >
+
+                        <div class="complaint-id-title">
+                            🎫 Complaint Submitted Successfully
+                        </div>
+
+
+                        <div class="complaint-id-label">
+                            Your Complaint ID
+                        </div>
+
+
+                        <div
+                            id="generatedComplaintId"
+                            class="generated-complaint-id"
+                        >
+                            --
+                        </div>
+
+
+                        <p>
+                            Please save this Complaint ID.
+                            You will need it to track your complaint.
+                        </p>
+
+
+                        <button
+                            type="button"
+                            id="copyComplaintIdBtn"
+                            class="secondary-btn"
+                        >
+                            📋 Copy Complaint ID
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         ACTIONS
+                         ================================================= -->
+
+                    <div class="form-actions">
+
+                        <button
+                            type="reset"
+                            class="secondary-btn"
+                            id="clearComplaintBtn"
+                        >
+                            Clear
+                        </button>
+
+
+                        <button
+                            type="submit"
+                            class="primary-btn"
+                        >
+                            📢 Submit Complaint
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 INFORMATION
+                 ================================================= -->
+
+            <div class="dashboard-section">
+
+                <h3>
+                    Complaint Information
+                </h3>
+
+
+                <div class="quick-actions">
+
+
+                    <!-- SUBMIT -->
+
+                    <div class="quick-action">
+
+                        <div class="quick-action-icon">
+                            📝
+                        </div>
+
+
+                        <h4>
+                            Submit Complaint
+                        </h4>
+
+
+                        <p>
+                            Provide accurate details
+                            about the issue you are facing.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- TRACK -->
+
+                    <div class="quick-action">
+
+                        <div class="quick-action-icon">
+                            🔍
+                        </div>
+
+
+                        <h4>
+                            Track Complaint
+                        </h4>
+
+
+                        <p>
+                            Track the status of your
+                            submitted complaint from
+                            the tracking page.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- RESOLUTION -->
+
+                    <div class="quick-action">
+
+                        <div class="quick-action-icon">
+                            ✅
+                        </div>
+
+
+                        <h4>
+                            Resolution
+                        </h4>
+
+
+                        <p>
+                            You can view the resolution
+                            status once your complaint
+                            is processed.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================================
+     FIREBASE AUTH
+     ========================================================= -->
+
+<script type="module">
+
+    import { auth }
+        from "../js/firebase-config.js";
+
+
+    import {
+        signOut
+    }
+    from
+        "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+
+
+    // =====================================================
+    // LOAD USER
+    // =====================================================
+
+    try {
+
+        const storedUser =
+            JSON.parse(
+                localStorage.getItem("svosUser")
+            );
+
+
+        if (storedUser) {
+
+            const userName =
+                document.getElementById(
+                    "userName"
+                );
+
+
+            if (userName) {
+
+                userName.textContent =
+                    storedUser.name ||
+                    "Citizen";
+
+            }
+
+        }
+
+    } catch (error) {
+
+        console.error(
+            "User loading error:",
+            error
+        );
+
+    }
+
+
+
+    // =====================================================
+    // LOGOUT
+    // =====================================================
+
+    const logoutBtn =
+        document.getElementById(
+            "logoutBtn"
+        );
+
+
+    if (logoutBtn) {
+
+        logoutBtn.addEventListener(
+            "click",
+            async function (event) {
+
+                event.preventDefault();
+
+
+                try {
+
+                    await signOut(auth);
+
+                } catch (error) {
+
+                    console.error(
+                        "Logout error:",
+                        error
+                    );
+
+                }
+
+
+                localStorage.removeItem(
+                    "svosUser"
+                );
+
+
+                window.location.href =
+                    "../login.html";
+
+            }
+        );
+
+    }
+
+</script>
+
+
+
+<!-- =========================================================
+     COMPLAINT JS
+     ========================================================= -->
+
+<script src="js/complaints.js"></script>
+
+
+</body>
+
+</html>

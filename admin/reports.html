@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SVOS - Reports & Analytics</title>
+
+    <!-- Admin CSS -->
+      <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <span>🏡</span>
+            SVOS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" >
+                🏠 Dashboard
+            </a>
+
+            <a href="users.html">
+                👥 Manage Users
+            </a>
+
+            <a href="complaints.html">
+                📢 Manage Complaints
+            </a>
+
+            <a href="notices.html">
+                📋 Manage Notices
+            </a>
+
+            <a href="schemes.html">
+                🎯 Manage Schemes
+            </a>
+
+            <a href="settings.html">
+                ⚙️ System Settings
+            </a>
+
+            <a href="reports.html" class="active">
+                📊 Reports & Analytics
+            </a>
+
+            <a href="#" id="logoutBtn" class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- ============================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ============================= -->
+
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <h1>
+                Reports & Analytics
+            </h1>
+
+            <div class="user-info">
+
+                <div>
+
+                    <strong id="userName">
+                        Administrator
+                    </strong>
+
+                    <small>
+                        System Administrator
+                    </small>
+
+                </div>
+
+                <div class="user-avatar">
+                    A
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ============================= -->
+        <!-- PAGE CONTENT -->
+        <!-- ============================= -->
+
+        <section class="dashboard-content">
+
+            <!-- PAGE HEADER -->
+
+            <div class="welcome-box">
+
+                <h2>
+                    System Reports & Analytics 📊
+                </h2>
+
+                <p>
+                    View service usage, applications,
+                    complaints and citizen activity reports.
+                </p>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- SUMMARY CARDS -->
+            <!-- ============================= -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👥
+                    </div>
+
+                    <div class="stat-info">
+
+                        <span>
+                            Total Citizens
+                        </span>
+
+                        <strong id="totalCitizens">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📄
+                    </div>
+
+                    <div class="stat-info">
+
+                        <span>
+                            Total Applications
+                        </span>
+
+                        <strong id="totalApplications">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📢
+                    </div>
+
+                    <div class="stat-info">
+
+                        <span>
+                            Total Complaints
+                        </span>
+
+                        <strong id="totalComplaints">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🎯
+                    </div>
+
+                    <div class="stat-info">
+
+                        <span>
+                            Total Services
+                        </span>
+
+                        <strong id="totalServices">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- REPORT SECTIONS -->
+            <!-- ============================= -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- APPLICATION REPORT -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            📄 Application Report
+                        </h3>
+
+                    </div>
+
+                    <div class="report-list">
+
+                        <div class="report-row">
+
+                            <span>
+                                Pending Applications
+                            </span>
+
+                            <strong id="pendingApplications">
+                                0
+                            </strong>
+
+                        </div>
+
+                        <div class="report-row">
+
+                            <span>
+                                Approved Applications
+                            </span>
+
+                            <strong id="approvedApplications">
+                                0
+                            </strong>
+
+                        </div>
+
+                        <div class="report-row">
+
+                            <span>
+                                Rejected Applications
+                            </span>
+
+                            <strong id="rejectedApplications">
+                                0
+                            </strong>
+
+                        </div>
+
+                        <div class="report-row">
+
+                            <span>
+                                Completed Applications
+                            </span>
+
+                            <strong id="completedApplications">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COMPLAINT REPORT -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            📢 Complaint Report
+                        </h3>
+
+                    </div>
+
+                    <div class="report-list">
+
+                        <div class="report-row">
+
+                            <span>
+                                Pending Complaints
+                            </span>
+
+                            <strong id="pendingComplaints">
+                                0
+                            </strong>
+
+                        </div>
+
+                        <div class="report-row">
+
+                            <span>
+                                Under Review
+                            </span>
+
+                            <strong id="reviewComplaints">
+                                0
+                            </strong>
+
+                        </div>
+
+                        <div class="report-row">
+
+                            <span>
+                                Resolved Complaints
+                            </span>
+
+                            <strong id="resolvedComplaints">
+                                0
+                            </strong>
+
+                        </div>
+
+                        <div class="report-row">
+
+                            <span>
+                                Rejected Complaints
+                            </span>
+
+                            <strong id="rejectedComplaints">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SERVICE REPORT -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            🏛️ Service Usage
+                        </h3>
+
+                    </div>
+
+                    <div class="report-list">
+
+                        <div class="report-row">
+
+                            <span>
+                                Available Services
+                            </span>
+
+                            <strong id="availableServices">
+                                0
+                            </strong>
+
+                        </div>
+
+                        <div class="report-row">
+
+                            <span>
+                                Active Services
+                            </span>
+
+                            <strong id="activeServices">
+                                0
+                            </strong>
+
+                        </div>
+
+                        <div class="report-row">
+
+                            <span>
+                                Most Used Service
+                            </span>
+
+                            <strong id="mostUsedService">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CITIZEN REPORT -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            👥 Citizen Activity
+                        </h3>
+
+                    </div>
+
+                    <div class="report-list">
+
+                        <div class="report-row">
+
+                            <span>
+                                Registered Citizens
+                            </span>
+
+                            <strong id="registeredCitizens">
+                                0
+                            </strong>
+
+                        </div>
+
+                        <div class="report-row">
+
+                            <span>
+                                Active Citizens
+                            </span>
+
+                            <strong id="activeCitizens">
+                                0
+                            </strong>
+
+                        </div>
+
+                        <div class="report-row">
+
+                            <span>
+                                New Citizens
+                            </span>
+
+                            <strong id="newCitizens">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- REPORT STATUS -->
+            <!-- ============================= -->
+
+            <div class="dashboard-card report-summary">
+
+                <div class="card-header">
+
+                    <h3>
+                        📈 System Overview
+                    </h3>
+
+                </div>
+
+                <div
+                    id="reportLoading"
+                    class="loading-state"
+                >
+
+                    Loading reports...
+
+                </div>
+
+                <div
+                    id="reportMessage"
+                    class="empty-state"
+                    style="display: none;"
+                >
+
+                    No report data available.
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ============================= -->
+<!-- JAVASCRIPT -->
+<!-- ============================= -->
+
+<script src="js/admin.js"></script>
+
+<script src="js/reports.js"></script>
+
+</body>
+
+</html>

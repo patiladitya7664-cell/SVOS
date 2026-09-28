@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SVOS - Citizen Dashboard</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+  </head>
+
+  <body>
+    <div class="dashboard-layout">
+      <!-- ================= SIDEBAR ================= -->
+
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <span>🏡</span>
+          SVOS
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="dashboard.html" class="active"> 🏠 Dashboard </a>
+
+          <a href="services.html"> 📝 Apply for Services </a>
+
+          <a href="complaints.html"> 📢 Lodge Complaint </a>
+
+          <a href="track-complaint.html"> 🔍 Track Complaint </a>
+
+          <a href="notices.html"> 📋 Notices </a>
+
+          <a href="schemes.html"> 🎯 Schemes </a>
+
+          <a href="emergency.html"> 🚨 Emergency Contacts </a>
+
+          <a href="profile.html"> 👤 Profile </a>
+
+          <a href="certificate.html"> 📄 Certificates </a>
+
+          <a href="#" id="logoutBtn" class="logout-btn"> 🚪 Logout </a>
+        </nav>
+      </aside>
+
+      <!-- ================= MAIN ================= -->
+
+      <main class="dashboard-main">
+        <header class="topbar">
+          <h1>Citizen Dashboard</h1>
+
+          <div class="user-info">
+            <div>
+              <strong id="userName"> Citizen </strong>
+
+              <small> Citizen </small>
+            </div>
+
+            <div class="user-avatar">C</div>
+          </div>
+        </header>
+
+        <section class="dashboard-content">
+          <div class="welcome-box">
+            <h2>Welcome to SVOS 👋</h2>
+
+            <p>
+              Access village services and stay connected with your Panchayat.
+            </p>
+          </div>
+
+          <!-- ================= STATS ================= -->
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">📝</div>
+
+              <h3>0</h3>
+
+              <p>Service Applications</p>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">📢</div>
+
+              <h3>0</h3>
+
+              <p>Complaints</p>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">⏳</div>
+
+              <h3>0</h3>
+
+              <p>Pending Requests</p>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon">✅</div>
+
+              <h3>0</h3>
+
+              <p>Resolved Requests</p>
+            </div>
+          </div>
+
+          <!-- ================= QUICK ACTIONS ================= -->
+
+          <div class="dashboard-section">
+            <h3>Quick Actions</h3>
+
+            <div class="quick-actions">
+              <a href="services.html" class="quick-action">
+                <div class="quick-action-icon">📝</div>
+
+                <h4>Apply for Service</h4>
+
+                <p>Apply for available village services.</p>
+              </a>
+
+              <a href="complaints.html" class="quick-action">
+                <div class="quick-action-icon">📢</div>
+
+                <h4>Lodge Complaint</h4>
+
+                <p>Submit a new complaint.</p>
+              </a>
+
+              <a href="notices.html" class="quick-action">
+                <div class="quick-action-icon">📋</div>
+
+                <h4>View Notices</h4>
+
+                <p>Check latest Panchayat notices.</p>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module">
+      import { auth } from "../js/firebase-config.js";
+
+      import { signOut } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+      const storedUser = JSON.parse(localStorage.getItem("svosUser"));
+
+      if (storedUser) {
+        document.getElementById("userName").textContent = storedUser.name;
+      }
+
+      document
+        .getElementById("logoutBtn")
+        .addEventListener("click", async (event) => {
+          event.preventDefault();
+
+          await signOut(auth);
+
+          localStorage.removeItem("svosUser");
+
+          window.location.href = "../login.html";
+        });
+    </script>
+  </body>
+</html>

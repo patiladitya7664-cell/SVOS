@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SVOS - Reports & Analytics</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <span>🏡</span>
+            SVOS
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="dashboard.html" >
+                🏠 Dashboard
+            </a>
+
+            <a href="citizens.html">
+                👥 Manage Citizens
+            </a>
+
+            <a href="complaints.html">
+                📢 Manage Complaints
+            </a>
+
+            <a href="applications.html">
+                📝 Service Applications
+            </a>
+
+            <a href="notices.html">
+                📋 Notices
+            </a>
+
+            <a href="schemes.html">
+                🎯 Schemes
+            </a>
+
+            <a href="emergency.html">
+                🚨 Emergency Alerts
+            </a>
+
+            <a href="reports.html" class="active">
+                📊 Reports & Analytics
+            </a>
+
+            <a href="profile.html">
+                👤 Profile
+            </a>
+
+            <a href="#" id="logoutBtn" class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <h1>Reports & Analytics</h1>
+
+            <div class="user-info">
+
+                <div>
+                    <strong id="userName">
+                        Panchayat Officer
+                    </strong>
+
+                    <small>
+                        Panchayat Officer
+                    </small>
+                </div>
+
+                <div class="user-avatar">
+                    O
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= DASHBOARD CONTENT ================= -->
+
+        <section class="dashboard-content">
+
+
+            <!-- WELCOME -->
+
+            <div class="welcome-box">
+
+                <h2>
+                    Reports & Analytics 📊
+                </h2>
+
+                <p>
+                    View Panchayat service, complaint,
+                    citizen and administrative reports.
+                </p>
+
+            </div>
+
+
+            <!-- ================= SUMMARY STATS ================= -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📝
+                    </div>
+
+                    <div>
+                        <span>
+                            Total Applications
+                        </span>
+
+                        <strong id="totalApplicationsReport">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📢
+                    </div>
+
+                    <div>
+                        <span>
+                            Total Complaints
+                        </span>
+
+                        <strong id="totalComplaintsReport">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👥
+                    </div>
+
+                    <div>
+                        <span>
+                            Total Citizens
+                        </span>
+
+                        <strong id="totalCitizensReport">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📄
+                    </div>
+
+                    <div>
+                        <span>
+                            Certificates Issued
+                        </span>
+
+                        <strong id="totalCertificatesReport">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= REPORT FILTER ================= -->
+
+            <div class="dashboard-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h3>
+                            Report Overview
+                        </h3>
+
+                        <p>
+                            Select a report period to view
+                            available statistics.
+                        </p>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="refreshReportsBtn"
+                        class="secondary-btn"
+                    >
+                        🔄 Refresh
+                    </button>
+
+                </div>
+
+
+                <div class="report-filters">
+
+                    <div class="filter-group">
+
+                        <label for="reportPeriod">
+                            Report Period
+                        </label>
+
+                        <select id="reportPeriod">
+
+                            <option value="all">
+                                All Time
+                            </option>
+
+                            <option value="today">
+                                Today
+                            </option>
+
+                            <option value="week">
+                                This Week
+                            </option>
+
+                            <option value="month">
+                                This Month
+                            </option>
+
+                            <option value="year">
+                                This Year
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="reportType">
+                            Report Type
+                        </label>
+
+                        <select id="reportType">
+
+                            <option value="overview">
+                                Overall Overview
+                            </option>
+
+                            <option value="applications">
+                                Service Applications
+                            </option>
+
+                            <option value="complaints">
+                                Complaints
+                            </option>
+
+                            <option value="citizens">
+                                Citizens
+                            </option>
+
+                            <option value="certificates">
+                                Certificates
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= APPLICATION REPORT ================= -->
+
+            <div class="dashboard-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h3>
+                            Service Applications
+                        </h3>
+
+                        <p>
+                            Application processing summary.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="report-stat-grid">
+
+                    <div class="report-stat-card">
+
+                        <span>
+                            Pending
+                        </span>
+
+                        <strong id="pendingApplicationsReport">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-stat-card">
+
+                        <span>
+                            Processing
+                        </span>
+
+                        <strong id="processingApplicationsReport">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-stat-card">
+
+                        <span>
+                            Approved
+                        </span>
+
+                        <strong id="approvedApplicationsReport">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-stat-card">
+
+                        <span>
+                            Rejected
+                        </span>
+
+                        <strong id="rejectedApplicationsReport">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= COMPLAINT REPORT ================= -->
+
+            <div class="dashboard-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h3>
+                            Complaint Summary
+                        </h3>
+
+                        <p>
+                            Current complaint status overview.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="report-stat-grid">
+
+                    <div class="report-stat-card">
+
+                        <span>
+                            Pending
+                        </span>
+
+                        <strong id="pendingComplaintsReport">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-stat-card">
+
+                        <span>
+                            In Progress
+                        </span>
+
+                        <strong id="processingComplaintsReport">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-stat-card">
+
+                        <span>
+                            Resolved
+                        </span>
+
+                        <strong id="resolvedComplaintsReport">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="report-stat-card">
+
+                        <span>
+                            Rejected
+                        </span>
+
+                        <strong id="rejectedComplaintsReport">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= REPORT TABLE ================= -->
+
+            <div class="dashboard-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h3>
+                            Report Details
+                        </h3>
+
+                        <p>
+                            Detailed information for the
+                            selected report.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="reportsMessage"
+                    class="form-message"
+                    style="display: none;"
+                ></div>
+
+
+                <div
+                    id="reportsLoading"
+                    class="loading-state"
+                >
+                    Loading reports...
+                </div>
+
+
+                <div
+                    id="reportsContainer"
+                    class="reports-container"
+                    style="display: none;"
+                ></div>
+
+
+                <div
+                    id="reportsEmpty"
+                    class="empty-state"
+                    style="display: none;"
+                >
+                    No report data available.
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= FIREBASE LOGOUT ================= -->
+
+<script type="module">
+
+    import { auth }
+        from "../js/firebase-config.js";
+
+    import { signOut }
+        from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+
+    const storedUser =
+        JSON.parse(
+            localStorage.getItem("svosUser")
+        );
+
+
+    if (storedUser) {
+
+        const userName =
+            document.getElementById("userName");
+
+        if (userName) {
+
+            userName.textContent =
+                storedUser.name ||
+                "Panchayat Officer";
+
+        }
+
+    }
+
+
+    const logoutBtn =
+        document.getElementById("logoutBtn");
+
+
+    if (logoutBtn) {
+
+        logoutBtn.addEventListener(
+            "click",
+            async function (event) {
+
+                event.preventDefault();
+
+                try {
+
+                    await signOut(auth);
+
+                } catch (error) {
+
+                    console.error(
+                        "Logout error:",
+                        error
+                    );
+
+                }
+
+                localStorage.removeItem(
+                    "svosUser"
+                );
+
+                window.location.href =
+                    "../login.html";
+
+            }
+        );
+
+    }
+
+</script>
+
+
+<!-- ================= OFFICER REPORT JS ================= -->
+
+<script src="js/officer-reports.js"></script>
+
+</body>
+</html>

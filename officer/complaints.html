@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SVOS - Complaints</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+<div class="dashboard-layout">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            <span>🏡</span>
+            SVOS
+        </div>
+
+          <nav class="sidebar-nav">
+
+            <a href="dashboard.html" >
+                🏠 Dashboard
+            </a>
+
+            <a href="citizens.html">
+                👥 Manage Citizens
+            </a>
+
+            <a href="complaints.html" class="active">
+                📢 Manage Complaints
+            </a>
+
+            <a href="applications.html">
+                📝 Service Applications
+            </a>
+
+            <a href="notices.html">
+                📋 Notices
+            </a>
+
+            <a href="schemes.html">
+                🎯 Schemes
+            </a>
+
+            <a href="emergency.html">
+                🚨 Emergency Alerts
+            </a>
+
+            <a href="reports.html">
+                📊 Reports & Analytics
+            </a>
+
+            <a href="profile.html">
+                👤 Profile
+            </a>
+
+            <a href="#" id="logoutBtn" class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <h1>Complaints</h1>
+
+            <div class="user-info">
+
+                <div>
+
+                    <strong id="userName">
+                        Panchayat Officer
+                    </strong>
+
+                    <small>
+                        Panchayat Officer
+                    </small>
+
+                </div>
+
+                <div class="user-avatar">
+                    O
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="dashboard-content">
+
+
+            <!-- WELCOME -->
+
+            <div class="welcome-box">
+
+                <h2>
+                    Complaint Management 📢
+                </h2>
+
+                <p>
+                    Review citizen complaints, track their
+                    status and manage complaint resolution.
+                </p>
+
+            </div>
+
+
+            <!-- ================= STATS ================= -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📢
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Complaints
+                        </span>
+
+                        <strong id="totalComplaints">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ⏳
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Pending
+                        </span>
+
+                        <strong id="pendingComplaints">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🔄
+                    </div>
+
+                    <div>
+
+                        <span>
+                            In Progress
+                        </span>
+
+                        <strong id="processingComplaints">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ✅
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Resolved
+                        </span>
+
+                        <strong id="resolvedComplaints">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= COMPLAINT SECTION ================= -->
+
+            <div class="dashboard-section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h3>
+                            Citizen Complaints
+                        </h3>
+
+                        <p>
+                            View and manage complaints submitted
+                            by citizens.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="refreshComplaintsBtn"
+                        class="secondary-btn"
+                    >
+                        🔄 Refresh
+                    </button>
+
+                </div>
+
+
+                <!-- FILTERS -->
+
+                <div class="complaint-filters">
+
+                    <div class="filter-group">
+
+                        <label for="complaintStatus">
+                            Status
+                        </label>
+
+                        <select id="complaintStatus">
+
+                            <option value="all">
+                                All Status
+                            </option>
+
+                            <option value="pending">
+                                Pending
+                            </option>
+
+                            <option value="processing">
+                                In Progress
+                            </option>
+
+                            <option value="resolved">
+                                Resolved
+                            </option>
+
+                            <option value="rejected">
+                                Rejected
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label for="complaintCategory">
+                            Category
+                        </label>
+
+                        <select id="complaintCategory">
+
+                            <option value="all">
+                                All Categories
+                            </option>
+
+                            <option value="water">
+                                Water
+                            </option>
+
+                            <option value="electricity">
+                                Electricity
+                            </option>
+
+                            <option value="road">
+                                Roads
+                            </option>
+
+                            <option value="sanitation">
+                                Sanitation
+                            </option>
+
+                            <option value="street-light">
+                                Street Light
+                            </option>
+
+                            <option value="drainage">
+                                Drainage
+                            </option>
+
+                            <option value="other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group complaint-search">
+
+                        <label for="complaintSearch">
+                            Search
+                        </label>
+
+                        <input
+                            type="search"
+                            id="complaintSearch"
+                            placeholder="Search complaint..."
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <div
+                    id="complaintsMessage"
+                    class="form-message"
+                    style="display: none;"
+                ></div>
+
+
+                <!-- LOADING -->
+
+                <div
+                    id="complaintsLoading"
+                    class="loading-state"
+                >
+                    Loading complaints...
+                </div>
+
+
+                <!-- COMPLAINTS -->
+
+                <div
+                    id="complaintsContainer"
+                    class="officer-complaints-container"
+                    style="display: none;"
+                ></div>
+
+
+                <!-- EMPTY -->
+
+                <div
+                    id="complaintsEmpty"
+                    class="empty-state"
+                    style="display: none;"
+                >
+                    No complaints found.
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= FIREBASE LOGOUT ================= -->
+
+<script type="module">
+
+    import { auth }
+        from "../js/firebase-config.js";
+
+    import { signOut }
+        from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+
+    const storedUser =
+        JSON.parse(
+            localStorage.getItem("svosUser")
+        );
+
+
+    if (storedUser) {
+
+        const userName =
+            document.getElementById("userName");
+
+        if (userName) {
+
+            userName.textContent =
+                storedUser.name ||
+                "Panchayat Officer";
+
+        }
+
+    }
+
+
+    const logoutBtn =
+        document.getElementById("logoutBtn");
+
+
+    if (logoutBtn) {
+
+        logoutBtn.addEventListener(
+            "click",
+            async function (event) {
+
+                event.preventDefault();
+
+                try {
+
+                    await signOut(auth);
+
+                } catch (error) {
+
+                    console.error(
+                        "Logout error:",
+                        error
+                    );
+
+                }
+
+                localStorage.removeItem(
+                    "svosUser"
+                );
+
+                window.location.href =
+                    "../login.html";
+
+            }
+        );
+
+    }
+
+</script>
+
+
+<script src="js/officer-complaints.js"></script>
+
+</body>
+</html>

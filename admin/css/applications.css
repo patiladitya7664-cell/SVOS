@@ -1,0 +1,701 @@
+/* =========================================================
+   SVOS ADMIN - APPLICATIONS PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.applications-page {
+    padding: 25px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.page-header p {
+    margin: 6px 0 0;
+    opacity: 0.7;
+}
+
+.refresh-btn {
+    border: none;
+    padding: 11px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
+
+.application-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.application-stat-card {
+    padding: 20px;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+}
+
+.application-stat-card span {
+    display: block;
+    font-size: 14px;
+    opacity: 0.65;
+    margin-bottom: 8px;
+}
+
+.application-stat-card strong {
+    font-size: 28px;
+}
+
+
+/* =========================================================
+   FILTERS
+   ========================================================= */
+
+.application-filters {
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 14px;
+    margin-bottom: 22px;
+
+    display: grid;
+    grid-template-columns: 180px 180px 1fr;
+    gap: 14px;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.application-filters select,
+.application-filters input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 11px 13px;
+
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+
+    outline: none;
+    background: #ffffff;
+}
+
+.application-filters input:focus,
+.application-filters select:focus {
+    border-color: #2e7d32;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.application-message {
+    display: none;
+
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+}
+
+.application-message.success {
+    display: block;
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.application-message.error {
+    display: block;
+    background: #ffebee;
+    color: #c62828;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+#applicationsLoading {
+    display: none;
+
+    text-align: center;
+    padding: 35px;
+}
+
+
+/* =========================================================
+   APPLICATION GRID
+   ========================================================= */
+
+.applications-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   APPLICATION CARD
+   ========================================================= */
+
+.application-card {
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.application-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.application-card-header {
+    padding: 18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 15px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.application-card-header h3 {
+    margin: 0 0 5px;
+
+    font-size: 18px;
+}
+
+.application-id {
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.application-status {
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.status-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-review {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.status-approved {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-rejected {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.status-completed {
+    background: #ede7f6;
+    color: #5e35b1;
+}
+
+
+/* =========================================================
+   CARD BODY
+   ========================================================= */
+
+.application-card-body {
+    padding: 18px;
+}
+
+.application-service {
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+.application-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 13px;
+}
+
+.application-info-item span {
+    display: block;
+
+    font-size: 12px;
+
+    opacity: 0.6;
+
+    margin-bottom: 4px;
+}
+
+.application-info-item strong {
+    font-size: 14px;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   CARD FOOTER
+   ========================================================= */
+
+.application-card-footer {
+    padding: 15px 18px;
+
+    border-top: 1px solid #eeeeee;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.view-application-btn {
+    border: none;
+
+    padding: 10px 16px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+#applicationsEmpty {
+    display: none;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+    opacity: 0.7;
+}
+
+#applicationsEmpty h3 {
+    margin-bottom: 8px;
+}
+
+#applicationsEmpty p {
+    margin: 0;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.application-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.application-modal.active {
+    display: flex;
+}
+
+.application-modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.application-modal-box {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(760px, 100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   MODAL HEADER
+   ========================================================= */
+
+.application-modal-header {
+    padding: 20px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.application-modal-header h2 {
+    margin: 0 0 5px;
+}
+
+.application-modal-header small {
+    opacity: 0.6;
+}
+
+.modal-close {
+    border: none;
+
+    background: transparent;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   MODAL BODY
+   ========================================================= */
+
+.application-modal-body {
+    padding: 20px;
+}
+
+.modal-detail-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+.modal-detail-item span,
+.modal-section > span {
+    display: block;
+
+    font-size: 12px;
+
+    opacity: 0.6;
+
+    margin-bottom: 5px;
+}
+
+.modal-detail-item strong {
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   MODAL SECTIONS
+   ========================================================= */
+
+.modal-section {
+    margin-top: 20px;
+}
+
+.modal-section p {
+    margin: 0;
+
+    line-height: 1.6;
+
+    white-space: pre-wrap;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   MODAL CONTROLS
+   ========================================================= */
+
+.modal-control {
+    margin-top: 20px;
+}
+
+.modal-control label {
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+.modal-control select,
+.modal-control textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #ffffff;
+}
+
+.modal-control select:focus,
+.modal-control textarea:focus {
+    border-color: #2e7d32;
+}
+
+.modal-control textarea {
+    resize: vertical;
+}
+
+
+/* =========================================================
+   MODAL MESSAGE
+   ========================================================= */
+
+.modal-message {
+    margin-top: 12px;
+
+    padding: 10px;
+
+    border-radius: 7px;
+
+    display: none;
+}
+
+.modal-message.error {
+    display: block;
+
+    background: #ffebee;
+
+    color: #c62828;
+}
+
+.modal-message.success {
+    display: block;
+
+    background: #e8f5e9;
+
+    color: #2e7d32;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+   ========================================================= */
+
+.modal-footer {
+    padding: 16px 20px;
+
+    border-top: 1px solid #eeeeee;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+}
+
+.modal-footer button {
+    border: none;
+
+    padding: 10px 17px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+.modal-footer button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .application-stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .applications-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .applications-page {
+        padding: 15px;
+    }
+
+    .page-header {
+        align-items: flex-start;
+    }
+
+    .page-header h1 {
+        font-size: 24px;
+    }
+
+    .refresh-btn {
+        width: 100%;
+    }
+
+    .application-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .application-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .application-card-header {
+        flex-direction: column;
+    }
+
+    .application-status {
+        align-self: flex-start;
+    }
+
+    .application-modal {
+        padding: 10px;
+    }
+
+    .application-modal-box {
+        max-height: 95vh;
+        border-radius: 12px;
+    }
+
+    .application-modal-header,
+    .application-modal-body,
+    .modal-footer {
+        padding: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .application-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .application-card-header h3 {
+        font-size: 16px;
+    }
+
+    .modal-footer {
+        flex-direction: column;
+    }
+
+    .modal-footer button {
+        width: 100%;
+    }
+
+}
